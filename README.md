@@ -54,35 +54,58 @@ conda activate stackmffv2
 pip install -r requirements.txt
 ```
 
-## �� Data Preparation
+## 📂 Data Preparation
 
 ### Training Data Structure
 
-The training dataset should be organized in the following structure:
+The framework supports training with multiple datasets. Each dataset should be organized as follows:
 
 ```
-data/
-├── train/
-│   ├── stack1/
-│   │   ├── 1.png
-│   │   ├── 2.png
-│   │   └── ...
-│   └── stack2/
-│       ├── 1.png
-│       └── ...
-├── val/
-└── test/
+project_root/
+├── dataset1/
+│   ├── image_stacks/
+│   │   ├── stack1/
+│   │   │   ├── 1.png
+│   │   │   ├── 2.png
+│   │   │   └── ...
+│   │   └── stack2/
+│   │       ├── 1.png
+│   │       ├── 2.png
+│   │       └── ...
+│   └── depth_maps/
+│       ├── stack1.png
+│       └── stack2.png
+├── dataset2/
+│   ├── image_stacks/
+│   └── depth_maps/
+└── dataset3/
+    ├── image_stacks/
+    └── depth_maps/
 ```
 
-Depth maps should be stored in corresponding directories:
+Training command example with multiple datasets:
+```bash
+python train.py \
+    --train_stack "dataset1/image_stacks" \
+    --train_depth_continuous "dataset1/depth_maps" \
+    --train_stack_2 "dataset2/image_stacks" \
+    --train_depth_continuous_2 "dataset2/depth_maps" \
+    --train_stack_3 "dataset3/image_stacks" \
+    --train_depth_continuous_3 "dataset3/depth_maps" \
+    --val_stack "val_dataset1/image_stacks" \
+    --val_depth_continuous "val_dataset1/depth_maps" \
+    --batch_size 12 \
+    --num_epochs 50 \
+    --lr 1e-3 \
+    --training_image_size 384
+```
 
-```
-depth_maps/
-├── train/
-│   ├── stack1.png
-│   └── stack2.png
-└── val/
-```
+Key directory structure requirements:
+- Each dataset has two main subdirectories: `image_stacks` and `depth_maps`
+- In `image_stacks`, each scene has its own folder containing sequentially numbered images
+- In `depth_maps`, each scene has a corresponding depth map with the same name as its stack folder
+- Images should be in PNG, JPG, or BMP format
+- Depth maps should be in grayscale PNG format
 
 ### Test Data Structure
 
