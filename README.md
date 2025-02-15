@@ -31,6 +31,16 @@
 Most multi-focus image fusion (MFF) networks are designed for two-image fusion, requiring multiple iterative operations for stack fusion that lead to error accumulation and image quality degradation. To address this challenge, we rethink the multi-focus image stack fusion problem by treating image stacks as a unified entity and propose a lightweight one-shot deep learning framework based on focal plane depth regression. The framework consists of three stages: intra-layer focus estimation, inter-layer focus estimation, and focus map regression. By reformulating multi-focus image stack fusion as a focal plane depth regression task, our framework enables end-to-end training using depth maps as proxy supervision. Extensive experiments on five public datasets demonstrate that our framework achieves state-of-the-art performance while reducing model size by 99.2% (from 6.08M to 0.05M parameters) compared to our previous one-shot fusion framework StackMFF, with the lowest FLOPs growth rate as the number of input images increases. Furthermore, our framework can process image stacks of arbitrary size in a single operation while preserving pixel fidelity through direct sampling.
 
 <div align="center">
+<img src="assets/keyboard_demo.gif" width="800px"/>
+<p>Demo of keyboard scene fusion</p>
+</div>
+
+<div align="center">
+<img src="assets/zeromotion_demo.gif" width="800px"/>
+<p>Demo of zeromotion scene fusion</p>
+</div>
+
+<div align="center">
 <img src="assets/framework.png" width="800px"/>
 <p>Overview of StackMFF-V2 Framework</p>
 </div>
