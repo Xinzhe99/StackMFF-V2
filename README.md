@@ -56,13 +56,13 @@ pip install -r requirements.txt
 
 ## 📂 Data Preparation
 
-### Training Data Structure
+### Training and Validation Data Structure
 
-The framework supports training with multiple datasets. Each dataset should be organized as follows:
+The framework supports training and validation with multiple datasets. Each dataset should be organized as follows:
 
 ```
 project_root/
-├── dataset1/
+├── train_dataset1/
 │   ├── image_stacks/
 │   │   ├── stack1/
 │   │   │   ├── 1.png
@@ -75,10 +75,13 @@ project_root/
 │   └── depth_maps/
 │       ├── stack1.png
 │       └── stack2.png
-├── dataset2/
+├── train_dataset2/
 │   ├── image_stacks/
 │   └── depth_maps/
-└── dataset3/
+├── val_dataset1/
+│   ├── image_stacks/
+│   └── depth_maps/
+└── val_dataset2/
     ├── image_stacks/
     └── depth_maps/
 ```
@@ -86,14 +89,16 @@ project_root/
 Training command example with multiple datasets:
 ```bash
 python train.py \
-    --train_stack "dataset1/image_stacks" \
-    --train_depth_continuous "dataset1/depth_maps" \
-    --train_stack_2 "dataset2/image_stacks" \
-    --train_depth_continuous_2 "dataset2/depth_maps" \
-    --train_stack_3 "dataset3/image_stacks" \
-    --train_depth_continuous_3 "dataset3/depth_maps" \
+    --train_stack "train_dataset1/image_stacks" \
+    --train_depth_continuous "train_dataset1/depth_maps" \
+    --train_stack_2 "train_dataset2/image_stacks" \
+    --train_depth_continuous_2 "train_dataset2/depth_maps" \
+    --train_stack_3 "train_dataset3/image_stacks" \
+    --train_depth_continuous_3 "train_dataset3/depth_maps" \
     --val_stack "val_dataset1/image_stacks" \
     --val_depth_continuous "val_dataset1/depth_maps" \
+    --val_stack_2 "val_dataset2/image_stacks" \
+    --val_depth_continuous_2 "val_dataset2/depth_maps" \
     --batch_size 12 \
     --num_epochs 50 \
     --lr 1e-3 \
@@ -107,13 +112,23 @@ Key directory structure requirements:
 - Images should be in PNG, JPG, or BMP format
 - Depth maps should be in grayscale PNG format
 
+The framework supports up to 5 training datasets and 5 validation datasets simultaneously. You can control which datasets to use during training with the following flags:
+- `--use_train_dataset_1` to `--use_train_dataset_5`
+- `--use_val_dataset_1` to `--use_val_dataset_5`
+
+During training, the framework will:
+1. Train on all enabled training datasets
+2. Validate on all enabled validation datasets separately
+3. Save validation metrics for each dataset independently
+4. Generate visualization results for each validation dataset
+
 ### Test Data Structure
 
 For batch testing multiple datasets, organize your test data as follows:
 
 ```
 test_root/
-├── dataset1/
+├── Mobile_Depth/
 │   └── dof_stack/
 │       ├── scene1/
 │       │   ├── 1.png
@@ -123,17 +138,32 @@ test_root/
 │           ├── 1.png
 │           ├── 2.png
 │           └── ...
-├── dataset2/
+├── Middlebury/
 │   └── dof_stack/
 │       ├── scene1/
 │       └── scene2/
-└── dataset3/
+├── FlyingThings3D/
+│   └── dof_stack/
+└── Road_MF/
     └── dof_stack/
-        ├── scene1/
-        └── scene2/
 ```
 
-Each dataset folder (e.g., Mobile_Depth, Middlebury, FlyingThings3D) should contain a `dof_stack` subfolder with multiple scene folders. Each scene folder contains the multi-focus image stack numbered sequentially.
+Each dataset folder (e.g., Mobile_Depth, Middlebury, FlyingThings3D, Road_MF) should contain a `dof_stack` subfolder with multiple scene folders. Each scene folder contains the multi-focus image stack numbered sequentially.
+
+Testing command example with multiple datasets:
+```bash
+python predict_datasets.py \
+    --model_path model.pth \
+    --test_root test_root \
+    --test_datasets Mobile_Depth Middlebury FlyingThings3D Road_MF \
+    --output_dir results
+```
+
+The framework will:
+1. Test on each dataset independently
+2. Generate fusion results for each scene
+3. Calculate metrics (SSIM, PSNR) for each dataset
+4. Save results in separate folders for each dataset
 
 ## 💻 Usage
 
