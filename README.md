@@ -2,13 +2,6 @@
 
 <div align="center">
 
-[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/release/python-380/)
-[![PyTorch](https://img.shields.io/badge/PyTorch-1.8+-ee4c2c.svg)](https://pytorch.org/get-started/locally/)
-
-</div>
-
-## 👥 Authors
-
 Xinzhe Xie, Buyu Guo*, Shuangyan He, Peiliang Li, Yanzhen Gu
 
 **Institutions:**
@@ -17,6 +10,8 @@ Xinzhe Xie, Buyu Guo*, Shuangyan He, Peiliang Li, Yanzhen Gu
 3. Donghai Laboratory, Zhoushan, P. R. China
 
 *Corresponding author
+
+</div>
 
 ## 📝 Table of Contents
 
@@ -78,7 +73,7 @@ Download Link:
 
 These are the exact datasets used in our quantitative evaluation and computational efficiency analysis. After downloading, please organize the datasets following the structure described in the [Predict Dataset](#predict-dataset) section.
 
-The `make_datasets` folder contains all the necessary code for processing and splitting the training datasets. For depth maps, except for the NYU Depth V2 dataset which uses its own depth maps, all other depth maps are obtained through inference using [Depth Anything V2](https://github.com/LiheYoung/Depth-Anything).
+The `make_datasets` folder contains all the necessary code for processing and splitting the training datasets. For depth maps, except for the NYU Depth V2 dataset which uses its own depth maps, all other depth maps are obtained through inference using [Depth Anything V2](https://github.com/DepthAnything/Depth-Anything-V2).
 
 ## 💻 Usage
 
