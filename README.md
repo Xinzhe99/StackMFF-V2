@@ -54,9 +54,55 @@ conda activate stackmffv2
 pip install -r requirements.txt
 ```
 
-## 📝 Data Preparation
+## 📖 Data Preparation
 
-[This section can be removed or used for other data-related content]
+The framework supports training and validation with multiple datasets. Each dataset should be organized as follows:
+
+```
+project_root/
+├── train_dataset1/          # 训练数据集示例
+│   ├── image_stacks/
+│   │   ├── stack1/
+│   │   │   ├── 1.png
+│   │   │   ├── 2.png
+│   │   │   └── ...
+│   │   └── stack2/
+│   │       ├── 1.png
+│   │       ├── 2.png
+│   │       └── ...
+│   └── depth_maps/
+│       ├── stack1.png
+│       └── stack2.png
+├── train_dataset2/
+├── train_dataset3/
+├── train_dataset4/
+├── train_dataset5/
+├── val_dataset1/           # 验证数据集示例
+│   ├── image_stacks/
+│   │   ├── stack1/
+│   │   │   ├── 1.png
+│   │   │   ├── 2.png
+│   │   │   └── ...
+│   │   └── stack2/
+│   │       ├── 1.png
+│   │       ├── 2.png
+│   │       └── ...
+│   └── depth_maps/
+│       ├── stack1.png
+│       └── stack2.png
+├── val_dataset2/
+├── val_dataset3/
+├── val_dataset4/
+└── val_dataset5/
+```
+
+Key directory structure requirements:
+- Each dataset has two main subdirectories: `image_stacks` and `depth_maps`
+- In `image_stacks`, each scene has its own folder containing sequentially numbered images (e.g., 1.png, 2.png, ...)
+- In `depth_maps`, each scene has a corresponding depth map with the same name as its stack folder (e.g., stack1.png for stack1 folder)
+- All training and validation datasets follow the same structure as shown in the examples above
+- Images should be in PNG, JPG, or BMP format
+- Depth maps should be in grayscale PNG format
 
 ## 💻 Usage
 
@@ -127,7 +173,7 @@ The framework supports training and validation with multiple datasets. Each data
 
 ```
 project_root/
-├── train_dataset1/
+├── train_dataset1/          
 │   ├── image_stacks/
 │   │   ├── stack1/
 │   │   │   ├── 1.png
@@ -141,58 +187,10 @@ project_root/
 │       ├── stack1.png
 │       └── stack2.png
 ├── train_dataset2/
-│   ├── image_stacks/
-│   │   ├── stack1/
-│   │   │   ├── 1.png
-│   │   │   ├── 2.png
-│   │   │   └── ...
-│   │   └── stack2/
-│   │       ├── 1.png
-│   │       ├── 2.png
-│   │       └── ...
-│   └── depth_maps/
-│       ├── stack1.png
-│       └── stack2.png
 ├── train_dataset3/
-│   ├── image_stacks/
-│   │   ├── stack1/
-│   │   │   ├── 1.png
-│   │   │   ├── 2.png
-│   │   │   └── ...
-│   │   └── stack2/
-│   │       ├── 1.png
-│   │       ├── 2.png
-│   │       └── ...
-│   └── depth_maps/
-│       ├── stack1.png
-│       └── stack2.png
 ├── train_dataset4/
-│   ├── image_stacks/
-│   │   ├── stack1/
-│   │   │   ├── 1.png
-│   │   │   ├── 2.png
-│   │   │   └── ...
-│   │   └── stack2/
-│   │       ├── 1.png
-│   │       ├── 2.png
-│   │       └── ...
-│   └── depth_maps/
-│       ├── stack1.png
-│       └── stack2.png
 ├── train_dataset5/
-│   ├── image_stacks/
-│   │   ├── stack1/
-│   │   │   ├── 1.png
-│   │   │   ├── 2.png
-│   │   │   └── ...
-│   │   └── stack2/
-│   │       ├── 1.png
-│   │       ├── 2.png
-│   │       └── ...
-│   └── depth_maps/
-│       ├── stack1.png
-│       └── stack2.png
-├── val_dataset1/
+├── val_dataset1/         
 │   ├── image_stacks/
 │   │   ├── stack1/
 │   │   │   ├── 1.png
@@ -206,63 +204,16 @@ project_root/
 │       ├── stack1.png
 │       └── stack2.png
 ├── val_dataset2/
-│   ├── image_stacks/
-│   │   ├── stack1/
-│   │   │   ├── 1.png
-│   │   │   ├── 2.png
-│   │   │   └── ...
-│   │   └── stack2/
-│   │       ├── 1.png
-│   │       ├── 2.png
-│   │       └── ...
-│   └── depth_maps/
-│       ├── stack1.png
-│       └── stack2.png
 ├── val_dataset3/
-│   ├── image_stacks/
-│   │   ├── stack1/
-│   │   │   ├── 1.png
-│   │   │   ├── 2.png
-│   │   │   └── ...
-│   │   └── stack2/
-│   │       ├── 1.png
-│   │       ├── 2.png
-│   │       └── ...
-│   └── depth_maps/
-│       ├── stack1.png
-│       └── stack2.png
 ├── val_dataset4/
-│   ├── image_stacks/
-│   │   ├── stack1/
-│   │   │   ├── 1.png
-│   │   │   ├── 2.png
-│   │   │   └── ...
-│   │   └── stack2/
-│   │       ├── 1.png
-│   │       ├── 2.png
-│   │       └── ...
-│   └── depth_maps/
-│       ├── stack1.png
-│       └── stack2.png
 └── val_dataset5/
-    ├── image_stacks/
-    │   ├── stack1/
-    │   │   ├── 1.png
-    │   │   ├── 2.png
-    │   │   └── ...
-    │   └── stack2/
-    │       ├── 1.png
-    │       ├── 2.png
-    │       └── ...
-    └── depth_maps/
-        ├── stack1.png
-        └── stack2.png
 ```
 
 Key directory structure requirements:
 - Each dataset has two main subdirectories: `image_stacks` and `depth_maps`
-- In `image_stacks`, each scene has its own folder containing sequentially numbered images
-- In `depth_maps`, each scene has a corresponding depth map with the same name as its stack folder
+- In `image_stacks`, each scene has its own folder containing sequentially numbered images (e.g., 1.png, 2.png, ...)
+- In `depth_maps`, each scene has a corresponding depth map with the same name as its stack folder (e.g., stack1.png for stack1 folder)
+- All training and validation datasets follow the same structure as shown in the examples above
 - Images should be in PNG, JPG, or BMP format
 - Depth maps should be in grayscale PNG format
 
