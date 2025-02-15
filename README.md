@@ -4,7 +4,7 @@
 
 ## Authors
 
-**Xinzhe Xie, Buyu Guo<sup>✉</sup>, Shuangyan He, Peiliang Li, Yanzhen Gu**
+**Xinzhe Xie** 👨‍🎓, **Buyu Guo**<sup>✉</sup> 👨‍🏫, **Shuangyan He** 👩‍🏫, **Peiliang Li** 👨‍🏫, **Yanzhen Gu** 👨‍🏫
 
 ### Institutions
 
@@ -79,7 +79,7 @@ Download Links:
   - Baidu Cloud: [https://pan.baidu.com/s/1xxxxxxxxxxxxxxxx](https://pan.baidu.com/s/1xxxxxxxxxxxxxxxx)
   - Extraction Code: xxxx
 
-For the implementation of iterative fusion methods mentioned in our paper (LP, RP, CVT, DWT, DCTWT, NSCT, DSIFT, SwinFusion, MFF-GAN, SDNet, U2Fusion), please refer to our toolbox:
+For the implementation of iterative fusion methods mentioned in our paper, please refer to our toolbox:
 [Toolbox-for-Multi-focus-Image-Stack-Fusion](https://github.com/Xinzhe99/Toolbox-for-Multi-focus-Image-Stack-Fusion)
 
 These are the exact datasets used in our quantitative evaluation and computational efficiency analysis. After downloading, please organize the datasets following the structure described in the [Predict Dataset](#predict-dataset) section.
