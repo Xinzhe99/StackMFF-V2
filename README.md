@@ -84,26 +84,6 @@ depth_maps/
 
 ## 💻 Usage
 
-### Training
-
-```bash
-python train.py \
-    --train_data_path data/train \
-    --train_depth_path depth_maps/train \
-    --val_data_path data/val \
-    --val_depth_path depth_maps/val \
-    --batch_size 8 \
-    --epochs 100 \
-    --lr 0.0001
-```
-
-Key Parameters:
-- `--train_data_path`: Path to training dataset
-- `--train_depth_path`: Path to training depth maps
-- `--batch_size`: Batch size
-- `--epochs`: Number of training epochs
-- `--lr`: Learning rate
-
 ### Predicting Single Stack
 
 ```bash
@@ -131,30 +111,126 @@ python evaluate.py \
     --metrics "PSNR SSIM VIF NIQE"
 ```
 
-## 📊 Results
+### Training
+
+```bash
+python train.py \
+    --train_data_path data/train \
+    --train_depth_path depth_maps/train \
+    --val_data_path data/val \
+    --val_depth_path depth_maps/val \
+    --batch_size 8 \
+    --epochs 100 \
+    --lr 0.0001
+```
+
+Key Parameters:
+- `--train_data_path`: Path to training dataset
+- `--train_depth_path`: Path to training depth maps
+- `--batch_size`: Batch size
+- `--epochs`: Number of training epochs
+- `--lr`: Learning rate
+
+## �� Results
 
 ### Quantitative Evaluation on Public Datasets
 
-| Dataset | Method | SSIM↑ | PSNR↑ |
-|---------|---------|-------|--------|
-| Mobile Depth | StackMFF | 0.4768 | 16.3399 |
-| | **Proposed** | **0.9452** | **34.4852** |
-| Middlebury | StackMFF | 0.4642 | 15.5382 |
-| | **Proposed** | **0.9123** | **30.0263** |
-| FlyingThings3D | StackMFF | 0.4741 | 16.2531 |
-| | **Proposed** | **0.9405** | **32.0477** |
-| Road-MF | StackMFF | 0.4846 | 16.5069 |
-| | **Proposed** | **0.9610** | **32.7955** |
-| NYU Depth V2 | StackMFF | 0.4906 | 18.8776 |
-| | **Proposed** | **0.9823** | **38.5155** |
+#### Mobile Depth Dataset
+| Method | SSIM↑ | PSNR↑ |
+|--------|-------|--------|
+| CVT | 0.9368 | 32.6158 |
+| DWT | 0.9340 | 32.1651 |
+| DCT | 0.4720 | 17.2719 |
+| DTCWT | 0.9412 | 32.7641 |
+| NSCT | 0.9340 | 32.1651 |
+| IFCNN | 0.7882 | 24.9863 |
+| U2Fusion | 0.3788 | 10.0482 |
+| SDNet | 0.3961 | 12.1659 |
+| MFF-GAN | 0.1797 | 7.1264 |
+| SwinFusion | 0.4381 | 12.4597 |
+| MUFusion | 0.4819 | 18.7311 |
+| SwinMFF | 0.3511 | 10.8676 |
+| DDBFusion | 0.8365 | 26.3713 |
+| StackMFF | 0.4768 | 16.3399 |
+| **Proposed** | **0.9452** | **34.4852** |
+
+#### Middlebury Dataset
+| Method | SSIM↑ | PSNR↑ |
+|--------|-------|--------|
+| CVT | 0.8893 | 29.3426 |
+| DWT | 0.8850 | 29.1761 |
+| DCT | 0.4520 | 13.9972 |
+| DTCWT | 0.8938 | 29.3763 |
+| NSCT | 0.8850 | 29.1761 |
+| IFCNN | 0.9014 | 29.2064 |
+| U2Fusion | 0.3980 | 10.1318 |
+| SDNet | 0.4399 | 14.0048 |
+| MFF-GAN | 0.2962 | 10.1180 |
+| SwinFusion | 0.4254 | 13.4794 |
+| MUFusion | 0.5809 | 19.7779 |
+| SwinMFF | 0.4215 | 11.8564 |
+| DDBFusion | 0.7181 | 23.7650 |
+| StackMFF | 0.4642 | 15.5382 |
+| **Proposed** | **0.9123** | **30.0263** |
+
+#### FlyingThings3D Dataset
+| Method | SSIM↑ | PSNR↑ |
+|--------|-------|--------|
+| CVT | 0.9157 | 30.0917 |
+| DWT | 0.9123 | 30.0074 |
+| DCT | 0.4603 | 15.0949 |
+| DTCWT | 0.9203 | 30.1512 |
+| NSCT | 0.9123 | 30.0074 |
+| IFCNN | 0.9236 | 31.3069 |
+| U2Fusion | 0.4242 | 11.4382 |
+| SDNet | 0.4457 | 14.5929 |
+| MFF-GAN | 0.3006 | 11.9173 |
+| SwinFusion | 0.4313 | 14.1286 |
+| MUFusion | 0.4762 | 19.8073 |
+| SwinMFF | 0.3238 | 12.2809 |
+| DDBFusion | 0.6984 | 23.0223 |
+| StackMFF | 0.4741 | 16.2531 |
+| **Proposed** | **0.9405** | **32.0477** |
 
 ### Computational Efficiency (seconds)
 
-| Method | Mobile Depth | Middlebury | FlyingThings3D | Road-MF | NYU Depth V2 |
-|--------|--------------|------------|----------------|----------|---------------|
-| StackMFF | 0.22 | 0.19 | 0.24 | 0.22 | 0.20 |
-| **Proposed** | **0.14** | **0.08** | **0.11** | **0.11** | **0.07** |
-| Reduction (%) | 36.36% | 57.89% | 54.17% | 50.00% | 65.00% |
+| Method | Device | Mobile Depth | Middlebury | FlyingThings3D | Road-MF | NYU Depth V2 |
+|--------|---------|--------------|------------|----------------|----------|---------------|
+| CVT | CPU | 48.00 | 31.37 | 37.87 | 78.14 | 56.20 |
+| DWT | CPU | 5.34 | 8.62 | 6.75 | 4.62 | 3.45 |
+| DCT | CPU | 4.97 | 3.30 | 6.04 | 4.97 | 9.16 |
+| DTCWT | CPU | 11.44 | 9.40 | 14.70 | 12.82 | 10.06 |
+| NSCT | CPU | 231.84 | 165.13 | 133.84 | 217.03 | 152.05 |
+| IFCNN | GPU | 0.55 | 0.50 | 0.78 | 0.55 | 0.44 |
+| U2Fusion | CPU | 41.04 | 35.90 | 45.10 | 104.96 | 41.93 |
+| SDNet | CPU | 9.68 | 5.26 | 14.04 | 8.18 | 6.64 |
+| MFF-GAN | CPU | 6.40 | 8.88 | 10.06 | 12.67 | 6.98 |
+| SwinFusion | GPU | 28.21 | 19.53 | 32.33 | 30.19 | 67.52 |
+| MUFusion | GPU | 40.40 | 21.98 | 55.02 | 45.79 | 31.02 |
+| SwinMFF | GPU | 27.97 | 18.23 | 34.05 | 55.04 | 24.47 |
+| DDBFusion | GPU | 33.89 | 30.06 | 41.98 | 35.57 | 17.35 |
+| StackMFF | GPU | 0.22 | 0.19 | 0.24 | 0.22 | 0.20 |
+| **Proposed** | GPU | **0.14** | **0.08** | **0.11** | **0.11** | **0.07** |
+
+### Statistical Ranking Analysis
+
+| Method | Mobile Depth | Middlebury | FlyingThings3D | Road-MF | Overall |
+|--------|--------------|------------|----------------|----------|----------|
+| MFF-GAN | 15.0 | 15.0 | 14.0 | 15.0 | 14.75 |
+| U2Fusion | 14.0 | 14.0 | 13.5 | 14.0 | 13.88 |
+| SwinFusion | 11.0 | 13.0 | 12.0 | 13.0 | 12.25 |
+| SDNet | 12.5 | 11.0 | 12.0 | 12.0 | 11.88 |
+| DCT | 11.0 | 12.0 | 11.0 | 11.0 | 11.25 |
+| SwinMFF | 11.0 | 10.0 | 9.5 | 10.0 | 10.13 |
+| MUFusion | 9.0 | 8.0 | 8.5 | 8.0 | 8.38 |
+| StackMFF | 8.5 | 9.0 | 6.5 | 9.0 | 8.25 |
+| DDBFusion | 6.0 | 7.0 | 7.5 | 5.0 | 6.38 |
+| DWT | 4.5 | 5.0 | 5.0 | 7.0 | 5.38 |
+| IFCNN | 7.0 | 3.0 | 2.0 | 6.0 | 4.50 |
+| NSCT | 4.5 | 5.0 | 5.0 | 1.5 | 4.00 |
+| CVT | 3.5 | 3.5 | 4.0 | 3.0 | 3.50 |
+| DTCWT | 2.0 | 2.5 | 3.0 | 1.5 | 2.25 |
+| **Proposed** | **1.0** | **1.0** | **1.0** | 4.0 | **1.75** |
 
 ## 📚 Citation
 
