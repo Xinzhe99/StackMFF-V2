@@ -76,7 +76,19 @@ Download Link:
 
 These are the exact datasets used in our quantitative evaluation and computational efficiency analysis. After downloading, please organize the datasets following the structure described in the [Predict Dataset](#predict-dataset) section.
 
-The `make_datasets` folder contains all the necessary code for processing and splitting the training datasets. For depth maps, except for the NYU Depth V2 dataset which uses its own depth maps, all other depth maps are obtained through inference using [Depth Anything V2](https://github.com/DepthAnything/Depth-Anything-V2).
+The `make_datasets` folder contains all the necessary code for processing and splitting the training datasets:
+
+- `ADE/1_extract.py`: Extracts and organizes images from the ADE20K dataset
+- `DUTS/filter.py`: Filters out images with uniform backgrounds from the DUTS dataset
+- `DIODE/extract_from_ori.py`: Processes and converts images from the DIODE dataset
+- `NYU V2 Depth/`:
+  - `1_crop_nyu_v2.py`: Crops RGB and depth images to remove boundary artifacts
+  - `2_nyu_depth_norm.py`: Normalizes depth maps to a standard range
+  - `3_split.py`: Splits the dataset into training and testing sets
+- `Cityscapes/1_move.py`: Reorganizes the Cityscapes dataset into a flattened structure
+- `make_dataset.py`: Generates multi-focus image stacks using depth maps
+
+For depth maps, except for the NYU Depth V2 dataset which uses its own depth maps, all other depth maps are obtained through inference using [Depth Anything V2](https://github.com/DepthAnything/Depth-Anything-V2).
 
 ## 💻 Usage
 
