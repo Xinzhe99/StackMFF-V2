@@ -60,7 +60,7 @@ The framework supports training and validation with multiple datasets. Each data
 
 ```
 project_root/
-├── train_dataset1/          # 训练数据集示例
+├── train_dataset1/    
 │   ├── image_stacks/
 │   │   ├── stack1/
 │   │   │   ├── 1.png
@@ -77,7 +77,7 @@ project_root/
 ├── train_dataset3/
 ├── train_dataset4/
 ├── train_dataset5/
-├── val_dataset1/           # 验证数据集示例
+├── val_dataset1/  
 │   ├── image_stacks/
 │   │   ├── stack1/
 │   │   │   ├── 1.png
