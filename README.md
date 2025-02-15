@@ -113,8 +113,7 @@ python predict_datasets.py \
 The framework will:
 1. Test on each dataset independently
 2. Generate fusion results for each scene
-3. Calculate metrics (SSIM, PSNR) for each dataset
-4. Save results in separate folders for each dataset
+3. Save results in separate folders for each dataset
 
 Parameters:
 - `--test_root`: Root directory containing all test datasets
@@ -178,10 +177,20 @@ python train.py \
     --train_depth_continuous_2 "train_dataset2/depth_maps" \
     --train_stack_3 "train_dataset3/image_stacks" \
     --train_depth_continuous_3 "train_dataset3/depth_maps" \
+    --train_stack_4 "train_dataset4/image_stacks" \
+    --train_depth_continuous_4 "train_dataset4/depth_maps" \
+    --train_stack_5 "train_dataset5/image_stacks" \
+    --train_depth_continuous_5 "train_dataset5/depth_maps" \
     --val_stack "val_dataset1/image_stacks" \
     --val_depth_continuous "val_dataset1/depth_maps" \
     --val_stack_2 "val_dataset2/image_stacks" \
     --val_depth_continuous_2 "val_dataset2/depth_maps" \
+    --val_stack_3 "val_dataset3/image_stacks" \
+    --val_depth_continuous_3 "val_dataset3/depth_maps" \
+    --val_stack_4 "val_dataset4/image_stacks" \
+    --val_depth_continuous_4 "val_dataset4/depth_maps" \
+    --val_stack_5 "val_dataset5/image_stacks" \
+    --val_depth_continuous_5 "val_dataset5/depth_maps" \
     --batch_size 12 \
     --num_epochs 50 \
     --lr 1e-3 \
@@ -282,7 +291,6 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 - Author: XinZhe Xie
 - Institution: Zhejiang University
-- Email: [xiexinzhe@zju.edu.cn]
 
 ---
 
