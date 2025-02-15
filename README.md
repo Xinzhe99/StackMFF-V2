@@ -1,4 +1,4 @@
-# Rethinking Multi-focus Image Stack Fusion: A Lightweight One-shot Deep Learning Framework via Focal Plane Depth Regression
+# Rethinking Multi-focus Image Stack Fusion: A Lightweight One-shot Deep Learning Framework via Focal Plane Depth Regression (StackMFF-V2)
 
 <div align="center">
 
@@ -22,7 +22,7 @@
 
 ## 📖 Overview
 
-StackMFF-V2 is a deep learning-based multi-focus image fusion framework that automatically processes image stacks with different focus areas to generate an all-in-focus image while estimating the scene's depth map. This project is an improved version of the original StackMFF, introducing new attention mechanisms and bidirectional ConvGRU structures.
+StackMFF-V2 is a deep learning-based multi-focus image fusion framework that automatically processes image stacks with different focus areas to generate an all-in-focus image while estimating the scene's focus map. This project is an improved version of the original StackMFF.
 
 <div align="center">
 <img src="assets/framework.png" width="800px"/>
@@ -33,23 +33,20 @@ StackMFF-V2 is a deep learning-based multi-focus image fusion framework that aut
 
 - 🔄 Support for arbitrary number of input image stacks
 - 🎯 High-quality all-in-focus image generation
-- 📊 Accurate depth map estimation
-- 🧠 Innovative attention mechanisms
-- ⚡ Efficient bidirectional temporal modeling
-- 📈 Flexible data augmentation strategies
+- 📊 Accurate focus map estimation
 
 ## 🚀 Installation
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/StackMFF-V2.git
+git clone https://github.com/Xinzhe99/StackMFF-V2.git
 cd StackMFF-V2
 ```
 
 2. Create and activate a virtual environment (recommended):
 ```bash
-conda create -n stackmff python=3.8
-conda activate stackmff
+conda create -n stackmffv2 python=3.8
+conda activate stackmffv2
 ```
 
 3. Install dependencies:
@@ -138,19 +135,11 @@ python evaluate.py \
 
 StackMFF-V2 consists of three main modules:
 
-1. **Feature Extraction Module** (`network.py`)
-   - Based on improved Inception blocks
-   - Spatial and channel attention mechanisms
-   - Multi-scale feature fusion
+1. **Intra-layer focus estimation** (`network.py`)
 
-2. **Layer Interaction Module** (`network.py`)
-   - Bidirectional ConvGRU
-   - Temporal modeling
-   - Feature enhancement
+3. **Inter-layer focus estimation** (`network.py`)
 
-3. **Depth Map Generation Module** (`network.py`)
-   - Multi-scale depth estimation
-   - Attention-guided depth inference
+4. **Focus map regression** (`network.py`)
 
 <div align="center">
 <img src="assets/attention_module.png" width="600px"/>
@@ -178,11 +167,13 @@ StackMFF-V2 consists of three main modules:
 If you use this project in your research, please cite our paper:
 
 ```bibtex
-@article{xie2024stackmff,
-  title={StackMFF-V2: Advanced Multi-Focus Image Fusion with Depth Estimation},
-  author={Xie, XinZhe and Others},
-  journal={arXiv preprint arXiv:2024.xxxxx},
-  year={2024}
+@article{xie2024swinmff,
+  title={SwinMFF: toward high-fidelity end-to-end multi-focus image fusion via swin transformer-based network},
+  author={Xie, Xinzhe and Guo, Buyu and Li, Peiliang and He, Shuangyan and Zhou, Sangjun},
+  journal={The Visual Computer},
+  pages={1--24},
+  year={2024},
+  publisher={Springer}
 }
 ```
 
@@ -190,15 +181,11 @@ If you use this project in your research, please cite our paper:
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-## 🤝 Contributing
-
-We welcome issues and contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md) for more information.
-
 ## 📧 Contact
 
 - Author: XinZhe Xie
 - Institution: Zhejiang University
-- Email: [your.email@example.com]
+- Email: [xiexinzhe@zju.edu.cn]
 
 ---
 
