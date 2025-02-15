@@ -4,7 +4,6 @@
 
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/release/python-380/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-1.8+-ee4c2c.svg)](https://pytorch.org/get-started/locally/)
-[![License](https://img.shields.io/badge/license-MIT-green.svg)](/LICENSE)
 
 </div>
 
@@ -13,8 +12,8 @@
 Xinzhe Xie, Buyu Guo*, Shuangyan He, Peiliang Li, Yanzhen Gu
 
 **Institutions:**
-1. Ocean College, Zhejiang University, Zhoushan, P. R. China
-2. Hainan Institute, Zhejiang University, Sanya, P. R. China
+1. Zhejiang University, Zhoushan, P. R. China
+2. Zhejiang University, Sanya, P. R. China
 3. Donghai Laboratory, Zhoushan, P. R. China
 
 *Corresponding author
@@ -28,7 +27,6 @@ Xinzhe Xie, Buyu Guo*, Shuangyan He, Peiliang Li, Yanzhen Gu
 - [Usage](#-usage)
 - [Results](#-results)
 - [Citation](#-citation)
-- [License](#-license)
 
 ## 📖 Overview
 
@@ -79,6 +77,8 @@ Download Link:
 - Extraction Code: xxxx
 
 These are the exact datasets used in our quantitative evaluation and computational efficiency analysis. After downloading, please organize the datasets following the structure described in the [Predict Dataset](#predict-dataset) section.
+
+The `make_datasets` folder contains all the necessary code for processing and splitting the training datasets. For depth maps, except for the NYU Depth V2 dataset which uses its own depth maps, all other depth maps are obtained through inference using [Depth Anything V2](https://github.com/LiheYoung/Depth-Anything).
 
 ## 💻 Usage
 
@@ -316,10 +316,6 @@ This work was supported by:
 - The Hainan Provincial Joint Project of Sanya Yazhou Bay Science and Technology City (No: 2021JJLH0079)
 - Innovational Fund for Scientific and Technological Personnel of Hainan Province (NO. KJRC2023D19)
 - National Key R&D Program of China (No. 2022YFC3103402)
-
-## 📄 License
-
-This project is licensed under the MIT License. See the [LICENSE](/LICENSE) file for details.
 
 ---
 
