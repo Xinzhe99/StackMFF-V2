@@ -86,7 +86,7 @@ Download Links:
   - Extraction Code: cite
 
 - Fusion Results of All Compared Methods:
-  - Baidu Cloud: [https://pan.baidu.com/s/1vnEciGFDDjDybmoxNSAVSA](https://pan.baidu.com/s/1vnEciGFDDjDybmoxNSAVSA)
+  - Baidu Cloud: [https://pan.baidu.com/s/1wzv8UKU_0boL1cSs58sr2w](https://pan.baidu.com/s/1wzv8UKU_0boL1cSs58sr2w)
   - Extraction Code: cite
 
 For the implementation of iterative fusion methods mentioned in our paper, please refer to our toolbox:
