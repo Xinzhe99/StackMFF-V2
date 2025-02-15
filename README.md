@@ -8,6 +8,32 @@
 
 </div>
 
+## 👥 Authors
+
+- **Xinzhe Xie**
+  - Ocean College, Zhejiang University, Zhoushan, P. R. China, 316021
+  - Hainan Institute, Zhejiang University, Sanya, P. R. China, 572025
+  - Email: xiexinzhe@zju.edu.cn
+
+- **Buyu Guo** (Corresponding Author)
+  - Hainan Institute, Zhejiang University, Sanya, P. R. China, 572025
+  - Donghai Laboratory, Zhoushan, P. R. China, 316021
+  - Email: guobuyuwork@163.com
+
+- **Shuangyan He**
+  - Ocean College, Zhejiang University, Zhoushan, P. R. China, 316021
+  - Hainan Institute, Zhejiang University, Sanya, P. R. China, 572025
+  - Email: hesy103@163.com
+
+- **Peiliang Li**
+  - Ocean College, Zhejiang University, Zhoushan, P. R. China, 316021
+  - Hainan Institute, Zhejiang University, Sanya, P. R. China, 572025
+  - Email: lipeiliang@zju.edu.cn
+
+- **Yanzhen Gu**
+  - Ocean College, Zhejiang University, Zhoushan, P. R. China, 316021
+  - Email: guyanzhen@zju.edu.cn
+
 ## 📝 Table of Contents
 
 - [Overview](#-overview)
@@ -333,14 +359,16 @@ If you use this project in your research, please cite our paper:
 }
 ```
 
+## 🙏 Acknowledgments
+
+This work was supported by:
+- The Hainan Provincial Joint Project of Sanya Yazhou Bay Science and Technology City (No: 2021JJLH0079)
+- Innovational Fund for Scientific and Technological Personnel of Hainan Province (NO. KJRC2023D19)
+- National Key R&D Program of China (No. 2022YFC3103402)
+
 ## 📄 License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
-## 📧 Contact
-
-- Author: XinZhe Xie
-- Institution: Zhejiang University
 
 ---
 
