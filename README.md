@@ -195,26 +195,6 @@ Training Parameters:
 | StackMFF | GPU | 0.22 | 0.19 | 0.24 | 0.22 | 0.20 |
 | **Proposed** | GPU | **0.14** | **0.08** | **0.11** | **0.11** | **0.07** |
 
-### Statistical Ranking Analysis
-
-| Method | Mobile Depth | Middlebury | FlyingThings3D | Road-MF | Overall |
-|--------|--------------|------------|----------------|----------|----------|
-| MFF-GAN | 15.0 | 15.0 | 14.0 | 15.0 | 14.75 |
-| U2Fusion | 14.0 | 14.0 | 13.5 | 14.0 | 13.88 |
-| SwinFusion | 11.0 | 13.0 | 12.0 | 13.0 | 12.25 |
-| SDNet | 12.5 | 11.0 | 12.0 | 12.0 | 11.88 |
-| DCT | 11.0 | 12.0 | 11.0 | 11.0 | 11.25 |
-| SwinMFF | 11.0 | 10.0 | 9.5 | 10.0 | 10.13 |
-| MUFusion | 9.0 | 8.0 | 8.5 | 8.0 | 8.38 |
-| StackMFF | 8.5 | 9.0 | 6.5 | 9.0 | 8.25 |
-| DDBFusion | 6.0 | 7.0 | 7.5 | 5.0 | 6.38 |
-| DWT | 4.5 | 5.0 | 5.0 | 7.0 | 5.38 |
-| IFCNN | 7.0 | 3.0 | 2.0 | 6.0 | 4.50 |
-| NSCT | 4.5 | 5.0 | 5.0 | 1.5 | 4.00 |
-| CVT | 3.5 | 3.5 | 4.0 | 3.0 | 3.50 |
-| DTCWT | 2.0 | 2.5 | 3.0 | 1.5 | 2.25 |
-| **Proposed** | **1.0** | **1.0** | **1.0** | 4.0 | **1.75** |
-
 ## 📚 Citation
 
 If you use this project in your research, please cite our paper:
