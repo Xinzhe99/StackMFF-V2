@@ -232,41 +232,7 @@ python train.py \
     --training_image_size 384
 ```
 
-Training Parameters:
-- `--train_stack`: Path to first training dataset image stacks
-- `--train_depth_continuous`: Path to first training dataset depth maps
-- `--train_stack_2`: Path to second training dataset image stacks
-- `--train_depth_continuous_2`: Path to second training dataset depth maps
-- `--train_stack_3`: Path to third training dataset image stacks
-- `--train_depth_continuous_3`: Path to third training dataset depth maps
-- `--train_stack_4`: Path to fourth training dataset image stacks
-- `--train_depth_continuous_4`: Path to fourth training dataset depth maps
-- `--train_stack_5`: Path to fifth training dataset image stacks
-- `--train_depth_continuous_5`: Path to fifth training dataset depth maps
-- `--val_stack`: Path to first validation dataset image stacks
-- `--val_depth_continuous`: Path to first validation dataset depth maps
-- `--val_stack_2`: Path to second validation dataset image stacks
-- `--val_depth_continuous_2`: Path to second validation dataset depth maps
-- `--val_stack_3`: Path to third validation dataset image stacks
-- `--val_depth_continuous_3`: Path to third validation dataset depth maps
-- `--val_stack_4`: Path to fourth validation dataset image stacks
-- `--val_depth_continuous_4`: Path to fourth validation dataset depth maps
-- `--val_stack_5`: Path to fifth validation dataset image stacks
-- `--val_depth_continuous_5`: Path to fifth validation dataset depth maps
-- `--use_train_dataset_1`: Whether to use first training dataset (default: True)
-- `--use_train_dataset_2`: Whether to use second training dataset (default: True)
-- `--use_train_dataset_3`: Whether to use third training dataset (default: True)
-- `--use_train_dataset_4`: Whether to use fourth training dataset (default: True)
-- `--use_train_dataset_5`: Whether to use fifth training dataset (default: True)
-- `--use_val_dataset_1`: Whether to use first validation dataset (default: True)
-- `--use_val_dataset_2`: Whether to use second validation dataset (default: True)
-- `--use_val_dataset_3`: Whether to use third validation dataset (default: True)
-- `--use_val_dataset_4`: Whether to use fourth validation dataset (default: True)
-- `--use_val_dataset_5`: Whether to use fifth validation dataset (default: True)
-- `--batch_size`: Batch size for training (default: 12)
-- `--num_epochs`: Number of training epochs (default: 50)
-- `--lr`: Learning rate (default: 1e-3)
-- `--training_image_size`: Size of training images (default: 384)
+For detailed parameter descriptions, please refer to the source code.
 
 ## 🎯 Results
 
