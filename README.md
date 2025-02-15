@@ -84,37 +84,39 @@ depth_maps/
 
 ## 💻 Usage
 
-### Predicting Single Stack
+The pre-trained model weights file `model.pth` should be placed in the project root directory.
+
+### Predict Single Stack
 
 ```bash
 python predict_one_stack.py \
-    --model_path checkpoints/model.pth \
+    --model_path model.pth \
     --input_dir path/to/input/stack \
     --output_dir path/to/output
 ```
 
-### Predicting Dataset
+### Predict Dataset
 
 ```bash
 python predict_datasets.py \
-    --model_path checkpoints/model.pth \
-    --test_data_path data/test \
+    --model_path model.pth \
+    --test_root path/to/test/root \
+    --test_datasets dataset1 dataset2 \
     --output_dir results
 ```
 
-### Evaluation
-
-```bash
-python evaluate.py \
-    --model_path checkpoints/model.pth \
-    --test_data_path data/test \
-    --metrics "PSNR SSIM VIF NIQE"
-```
+Parameters:
+- `--input_dir`: Directory containing input image stack
+- `--output_dir`: Directory for saving results
+- `--model_path`: Path to model weights file (optional, defaults to `model.pth` in root directory)
+- `--test_root`: Root directory of test datasets
+- `--test_datasets`: List of dataset names to test
 
 ### Training
 
 ```bash
 python train.py \
+    --model_path model.pth \
     --train_data_path data/train \
     --train_depth_path depth_maps/train \
     --val_data_path data/val \
@@ -124,10 +126,11 @@ python train.py \
     --lr 0.0001
 ```
 
-Key Parameters:
+Training Parameters:
 - `--train_data_path`: Path to training dataset
 - `--train_depth_path`: Path to training depth maps
-- `--batch_size`: Batch size
+- `--model_path`: Path to model weights file
+- `--batch_size`: Batch size for training
 - `--epochs`: Number of training epochs
 - `--lr`: Learning rate
 
