@@ -10,29 +10,14 @@
 
 ## 👥 Authors
 
-- **Xinzhe Xie**
-  - Ocean College, Zhejiang University, Zhoushan, P. R. China, 316021
-  - Hainan Institute, Zhejiang University, Sanya, P. R. China, 572025
-  - Email: xiexinzhe@zju.edu.cn
+Xinzhe Xie, Buyu Guo*, Shuangyan He, Peiliang Li, Yanzhen Gu
 
-- **Buyu Guo** (Corresponding Author)
-  - Hainan Institute, Zhejiang University, Sanya, P. R. China, 572025
-  - Donghai Laboratory, Zhoushan, P. R. China, 316021
-  - Email: guobuyuwork@163.com
+**Institutions:**
+1. Ocean College, Zhejiang University, Zhoushan, P. R. China
+2. Hainan Institute, Zhejiang University, Sanya, P. R. China
+3. Donghai Laboratory, Zhoushan, P. R. China
 
-- **Shuangyan He**
-  - Ocean College, Zhejiang University, Zhoushan, P. R. China, 316021
-  - Hainan Institute, Zhejiang University, Sanya, P. R. China, 572025
-  - Email: hesy103@163.com
-
-- **Peiliang Li**
-  - Ocean College, Zhejiang University, Zhoushan, P. R. China, 316021
-  - Hainan Institute, Zhejiang University, Sanya, P. R. China, 572025
-  - Email: lipeiliang@zju.edu.cn
-
-- **Yanzhen Gu**
-  - Ocean College, Zhejiang University, Zhoushan, P. R. China, 316021
-  - Email: guyanzhen@zju.edu.cn
+*Corresponding author
 
 ## 📝 Table of Contents
 
