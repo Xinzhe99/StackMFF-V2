@@ -320,7 +320,7 @@ For detailed parameter descriptions, please refer to the source code.
 
 ## 📚 Citation
 
-If you use this project in your research, please cite our paper:
+If you use this project in your research, please cite our papers:
 
 ```bibtex
 @article{xie2024swinmff,
@@ -330,6 +330,15 @@ If you use this project in your research, please cite our paper:
   pages={1--24},
   year={2024},
   publisher={Springer}
+}
+
+@inproceedings{xie2024underwater,
+  title={Underwater Three-Dimensional Microscope for Marine Benthic Organism Monitoring},
+  author={Xie, Xinzhe and Guo, Buyu and Li, Peiliang and Jiang, Qingyan},
+  booktitle={OCEANS 2024-Singapore},
+  pages={1--4},
+  year={2024},
+  organization={IEEE}
 }
 ```
 
