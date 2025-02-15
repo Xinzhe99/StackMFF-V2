@@ -70,9 +70,17 @@ We provide the test datasets used in our paper for research purposes. These data
 - Road_MF
 - NYU_Depth_V2
 
-Download Link:
-- Baidu Cloud: [https://pan.baidu.com/s/1xxxxxxxxxxxxxxxx](https://pan.baidu.com/s/1xxxxxxxxxxxxxxxx)
-- Extraction Code: xxxx
+Download Links:
+- Test Datasets:
+  - Baidu Cloud: [https://pan.baidu.com/s/1xxxxxxxxxxxxxxxx](https://pan.baidu.com/s/1xxxxxxxxxxxxxxxx)
+  - Extraction Code: xxxx
+
+- Fusion Results of All Compared Methods:
+  - Baidu Cloud: [https://pan.baidu.com/s/1xxxxxxxxxxxxxxxx](https://pan.baidu.com/s/1xxxxxxxxxxxxxxxx)
+  - Extraction Code: xxxx
+
+For the implementation of iterative fusion methods mentioned in our paper (LP, RP, CVT, DWT, DCTWT, NSCT, DSIFT, SwinFusion, MFF-GAN, SDNet, U2Fusion), please refer to our toolbox:
+[Toolbox-for-Multi-focus-Image-Stack-Fusion](https://github.com/Xinzhe99/Toolbox-for-Multi-focus-Image-Stack-Fusion)
 
 These are the exact datasets used in our quantitative evaluation and computational efficiency analysis. After downloading, please organize the datasets following the structure described in the [Predict Dataset](#predict-dataset) section.
 
