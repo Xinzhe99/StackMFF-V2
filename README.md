@@ -142,13 +142,121 @@ project_root/
 │       └── stack2.png
 ├── train_dataset2/
 │   ├── image_stacks/
+│   │   ├── stack1/
+│   │   │   ├── 1.png
+│   │   │   ├── 2.png
+│   │   │   └── ...
+│   │   └── stack2/
+│   │       ├── 1.png
+│   │       ├── 2.png
+│   │       └── ...
 │   └── depth_maps/
+│       ├── stack1.png
+│       └── stack2.png
+├── train_dataset3/
+│   ├── image_stacks/
+│   │   ├── stack1/
+│   │   │   ├── 1.png
+│   │   │   ├── 2.png
+│   │   │   └── ...
+│   │   └── stack2/
+│   │       ├── 1.png
+│   │       ├── 2.png
+│   │       └── ...
+│   └── depth_maps/
+│       ├── stack1.png
+│       └── stack2.png
+├── train_dataset4/
+│   ├── image_stacks/
+│   │   ├── stack1/
+│   │   │   ├── 1.png
+│   │   │   ├── 2.png
+│   │   │   └── ...
+│   │   └── stack2/
+│   │       ├── 1.png
+│   │       ├── 2.png
+│   │       └── ...
+│   └── depth_maps/
+│       ├── stack1.png
+│       └── stack2.png
+├── train_dataset5/
+│   ├── image_stacks/
+│   │   ├── stack1/
+│   │   │   ├── 1.png
+│   │   │   ├── 2.png
+│   │   │   └── ...
+│   │   └── stack2/
+│   │       ├── 1.png
+│   │       ├── 2.png
+│   │       └── ...
+│   └── depth_maps/
+│       ├── stack1.png
+│       └── stack2.png
 ├── val_dataset1/
 │   ├── image_stacks/
+│   │   ├── stack1/
+│   │   │   ├── 1.png
+│   │   │   ├── 2.png
+│   │   │   └── ...
+│   │   └── stack2/
+│   │       ├── 1.png
+│   │       ├── 2.png
+│   │       └── ...
 │   └── depth_maps/
-└── val_dataset2/
+│       ├── stack1.png
+│       └── stack2.png
+├── val_dataset2/
+│   ├── image_stacks/
+│   │   ├── stack1/
+│   │   │   ├── 1.png
+│   │   │   ├── 2.png
+│   │   │   └── ...
+│   │   └── stack2/
+│   │       ├── 1.png
+│   │       ├── 2.png
+│   │       └── ...
+│   └── depth_maps/
+│       ├── stack1.png
+│       └── stack2.png
+├── val_dataset3/
+│   ├── image_stacks/
+│   │   ├── stack1/
+│   │   │   ├── 1.png
+│   │   │   ├── 2.png
+│   │   │   └── ...
+│   │   └── stack2/
+│   │       ├── 1.png
+│   │       ├── 2.png
+│   │       └── ...
+│   └── depth_maps/
+│       ├── stack1.png
+│       └── stack2.png
+├── val_dataset4/
+│   ├── image_stacks/
+│   │   ├── stack1/
+│   │   │   ├── 1.png
+│   │   │   ├── 2.png
+│   │   │   └── ...
+│   │   └── stack2/
+│   │       ├── 1.png
+│   │       ├── 2.png
+│   │       └── ...
+│   └── depth_maps/
+│       ├── stack1.png
+│       └── stack2.png
+└── val_dataset5/
     ├── image_stacks/
+    │   ├── stack1/
+    │   │   ├── 1.png
+    │   │   ├── 2.png
+    │   │   └── ...
+    │   └── stack2/
+    │       ├── 1.png
+    │       ├── 2.png
+    │       └── ...
     └── depth_maps/
+        ├── stack1.png
+        └── stack2.png
 ```
 
 Key directory structure requirements:
@@ -198,10 +306,36 @@ python train.py \
 ```
 
 Training Parameters:
-- `--train_stack`, `--train_stack_2`, etc.: Paths to training image stacks
-- `--train_depth_continuous`, `--train_depth_continuous_2`, etc.: Paths to training depth maps
-- `--val_stack`, `--val_stack_2`, etc.: Paths to validation image stacks
-- `--val_depth_continuous`, `--val_depth_continuous_2`, etc.: Paths to validation depth maps
+- `--train_stack`: Path to first training dataset image stacks
+- `--train_depth_continuous`: Path to first training dataset depth maps
+- `--train_stack_2`: Path to second training dataset image stacks
+- `--train_depth_continuous_2`: Path to second training dataset depth maps
+- `--train_stack_3`: Path to third training dataset image stacks
+- `--train_depth_continuous_3`: Path to third training dataset depth maps
+- `--train_stack_4`: Path to fourth training dataset image stacks
+- `--train_depth_continuous_4`: Path to fourth training dataset depth maps
+- `--train_stack_5`: Path to fifth training dataset image stacks
+- `--train_depth_continuous_5`: Path to fifth training dataset depth maps
+- `--val_stack`: Path to first validation dataset image stacks
+- `--val_depth_continuous`: Path to first validation dataset depth maps
+- `--val_stack_2`: Path to second validation dataset image stacks
+- `--val_depth_continuous_2`: Path to second validation dataset depth maps
+- `--val_stack_3`: Path to third validation dataset image stacks
+- `--val_depth_continuous_3`: Path to third validation dataset depth maps
+- `--val_stack_4`: Path to fourth validation dataset image stacks
+- `--val_depth_continuous_4`: Path to fourth validation dataset depth maps
+- `--val_stack_5`: Path to fifth validation dataset image stacks
+- `--val_depth_continuous_5`: Path to fifth validation dataset depth maps
+- `--use_train_dataset_1`: Whether to use first training dataset (default: True)
+- `--use_train_dataset_2`: Whether to use second training dataset (default: True)
+- `--use_train_dataset_3`: Whether to use third training dataset (default: True)
+- `--use_train_dataset_4`: Whether to use fourth training dataset (default: True)
+- `--use_train_dataset_5`: Whether to use fifth training dataset (default: True)
+- `--use_val_dataset_1`: Whether to use first validation dataset (default: True)
+- `--use_val_dataset_2`: Whether to use second validation dataset (default: True)
+- `--use_val_dataset_3`: Whether to use third validation dataset (default: True)
+- `--use_val_dataset_4`: Whether to use fourth validation dataset (default: True)
+- `--use_val_dataset_5`: Whether to use fifth validation dataset (default: True)
 - `--batch_size`: Batch size for training (default: 12)
 - `--num_epochs`: Number of training epochs (default: 50)
 - `--lr`: Learning rate (default: 1e-3)
