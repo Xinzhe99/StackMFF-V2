@@ -1,19 +1,22 @@
-# Rethinking Multi-focus Image Stack Fusion: A Lightweight One-shot Deep Learning Framework via Focal Plane Depth Regression (StackMFF-V2)
+# Rethinking Multi-focus Image Stack Fusion: A Lightweight One-shot Deep Learning Framework via Focal Plane Depth Regression
 
 <div align="center">
 
-Xinzhe Xie, Buyu Guo*, Shuangyan He, Peiliang Li, Yanzhen Gu
+## Authors
 
-**Institutions:**
-1. Zhejiang University, Zhoushan, P. R. China
-2. Zhejiang University, Sanya, P. R. China
-3. Donghai Laboratory, Zhoushan, P. R. China
+**Xinzhe Xie, Buyu Guo<sup>✉</sup>, Shuangyan He, Peiliang Li, Yanzhen Gu**
 
-*Corresponding author
+### Institutions
+
+🏛️ Zhejiang University, Zhoushan, P. R. China  
+🏛️ Hainan Institute, Zhejiang University, Sanya, P. R. China  
+🔬 Donghai Laboratory, Zhoushan, P. R. China
+
+<sup>✉</sup> Corresponding author
 
 </div>
 
-## 📝 Table of Contents
+##  Table of Contents
 
 - [Overview](#-overview)
 - [Highlights](#-highlights)
