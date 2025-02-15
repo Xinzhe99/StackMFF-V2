@@ -54,9 +54,75 @@ conda activate stackmffv2
 pip install -r requirements.txt
 ```
 
-## 📂 Data Preparation
+## 📝 Data Preparation
 
-### Training and Validation Data Structure
+[This section can be removed or used for other data-related content]
+
+## 💻 Usage
+
+The pre-trained model weights file `model.pth` should be placed in the project root directory.
+
+### Predict Single Stack
+
+```bash
+python predict_one_stack.py \
+    --model_path model.pth \
+    --input_dir path/to/input/stack \
+    --output_dir path/to/output
+```
+
+### Predict Dataset
+
+For batch testing multiple datasets, organize your test data as follows:
+
+```
+test_root/
+├── Mobile_Depth/
+│   └── dof_stack/
+│       ├── scene1/
+│       │   ├── 1.png
+│       │   ├── 2.png
+│       │   └── ...
+│       └── scene2/
+│           ├── 1.png
+│           ├── 2.png
+│           └── ...
+├── Middlebury/
+│   └── dof_stack/
+│       ├── scene1/
+│       └── scene2/
+├── FlyingThings3D/
+│   └── dof_stack/
+├── Road_MF/
+│   └── dof_stack/
+└── NYU_Depth_V2/
+    └── dof_stack/
+```
+
+Each dataset folder (e.g., Mobile_Depth, Middlebury, FlyingThings3D, Road_MF, NYU_Depth_V2) should contain a `dof_stack` subfolder with multiple scene folders. Each scene folder contains the multi-focus image stack numbered sequentially.
+
+Run prediction on multiple datasets:
+```bash
+python predict_datasets.py \
+    --model_path model.pth \
+    --test_root test_root \
+    --test_datasets Mobile_Depth Middlebury FlyingThings3D Road_MF NYU_Depth_V2 \
+    --output_dir results
+```
+
+The framework will:
+1. Test on each dataset independently
+2. Generate fusion results for each scene
+3. Calculate metrics (SSIM, PSNR) for each dataset
+4. Save results in separate folders for each dataset
+
+Parameters:
+- `--test_root`: Root directory containing all test datasets
+- `--test_datasets`: List of dataset names to test (e.g., Mobile_Depth Middlebury)
+- `--output_dir`: Directory for saving results
+- `--model_path`: Path to model weights file (optional, defaults to `model.pth` in root directory)
+
+### Training
 
 The framework supports training and validation with multiple datasets. Each dataset should be organized as follows:
 
@@ -86,6 +152,23 @@ project_root/
     └── depth_maps/
 ```
 
+Key directory structure requirements:
+- Each dataset has two main subdirectories: `image_stacks` and `depth_maps`
+- In `image_stacks`, each scene has its own folder containing sequentially numbered images
+- In `depth_maps`, each scene has a corresponding depth map with the same name as its stack folder
+- Images should be in PNG, JPG, or BMP format
+- Depth maps should be in grayscale PNG format
+
+The framework supports up to 5 training datasets and 5 validation datasets simultaneously. You can control which datasets to use during training with the following flags:
+- `--use_train_dataset_1` to `--use_train_dataset_5`
+- `--use_val_dataset_1` to `--use_val_dataset_5`
+
+During training, the framework will:
+1. Train on all enabled training datasets
+2. Validate on all enabled validation datasets separately
+3. Save validation metrics for each dataset independently
+4. Generate visualization results for each validation dataset
+
 Training command example with multiple datasets:
 ```bash
 python train.py \
@@ -105,117 +188,15 @@ python train.py \
     --training_image_size 384
 ```
 
-Key directory structure requirements:
-- Each dataset has two main subdirectories: `image_stacks` and `depth_maps`
-- In `image_stacks`, each scene has its own folder containing sequentially numbered images
-- In `depth_maps`, each scene has a corresponding depth map with the same name as its stack folder
-- Images should be in PNG, JPG, or BMP format
-- Depth maps should be in grayscale PNG format
-
-The framework supports up to 5 training datasets and 5 validation datasets simultaneously. You can control which datasets to use during training with the following flags:
-- `--use_train_dataset_1` to `--use_train_dataset_5`
-- `--use_val_dataset_1` to `--use_val_dataset_5`
-
-During training, the framework will:
-1. Train on all enabled training datasets
-2. Validate on all enabled validation datasets separately
-3. Save validation metrics for each dataset independently
-4. Generate visualization results for each validation dataset
-
-### Test Data Structure
-
-For batch testing multiple datasets, organize your test data as follows:
-
-```
-test_root/
-├── Mobile_Depth/
-│   └── dof_stack/
-│       ├── scene1/
-│       │   ├── 1.png
-│       │   ├── 2.png
-│       │   └── ...
-│       └── scene2/
-│           ├── 1.png
-│           ├── 2.png
-│           └── ...
-├── Middlebury/
-│   └── dof_stack/
-│       ├── scene1/
-│       └── scene2/
-├── FlyingThings3D/
-│   └── dof_stack/
-└── Road_MF/
-    └── dof_stack/
-```
-
-Each dataset folder (e.g., Mobile_Depth, Middlebury, FlyingThings3D, Road_MF) should contain a `dof_stack` subfolder with multiple scene folders. Each scene folder contains the multi-focus image stack numbered sequentially.
-
-Testing command example with multiple datasets:
-```bash
-python predict_datasets.py \
-    --model_path model.pth \
-    --test_root test_root \
-    --test_datasets Mobile_Depth Middlebury FlyingThings3D Road_MF \
-    --output_dir results
-```
-
-The framework will:
-1. Test on each dataset independently
-2. Generate fusion results for each scene
-3. Calculate metrics (SSIM, PSNR) for each dataset
-4. Save results in separate folders for each dataset
-
-## 💻 Usage
-
-The pre-trained model weights file `model.pth` should be placed in the project root directory.
-
-### Predict Single Stack
-
-```bash
-python predict_one_stack.py \
-    --model_path model.pth \
-    --input_dir path/to/input/stack \
-    --output_dir path/to/output
-```
-
-### Predict Dataset
-
-```bash
-python predict_datasets.py \
-    --model_path model.pth \
-    --test_root path/to/test/root \
-    --test_datasets dataset1 dataset2 \
-    --output_dir results
-```
-
-Parameters:
-- `--input_dir`: Directory containing input image stack
-- `--output_dir`: Directory for saving results
-- `--model_path`: Path to model weights file (optional, defaults to `model.pth` in root directory)
-- `--test_root`: Root directory of test datasets
-- `--test_datasets`: List of dataset names to test
-
-### Training
-
-```bash
-python train.py \
-    --model_path model.pth \
-    --train_data_path data/train \
-    --train_depth_path depth_maps/train \
-    --val_data_path data/val \
-    --val_depth_path depth_maps/val \
-    --batch_size 8 \
-    --epochs 100 \
-    --lr 0.0001
-```
-
 Training Parameters:
-- `--train_data_path`: Path to training dataset
-- `--train_depth_path`: Path to training depth maps
-- `--model_path`: Path to model weights file
-- `--batch_size`: Batch size for training
-- `--epochs`: Number of training epochs
-- `--lr`: Learning rate
+- `--train_stack`, `--train_stack_2`, etc.: Paths to training image stacks
+- `--train_depth_continuous`, `--train_depth_continuous_2`, etc.: Paths to training depth maps
+- `--val_stack`, `--val_stack_2`, etc.: Paths to validation image stacks
+- `--val_depth_continuous`, `--val_depth_continuous_2`, etc.: Paths to validation depth maps
+- `--batch_size`: Batch size for training (default: 12)
+- `--num_epochs`: Number of training epochs (default: 50)
+- `--lr`: Learning rate (default: 1e-3)
+- `--training_image_size`: Size of training images (default: 384)
 
 ## 🎯 Results
 
@@ -277,26 +258,6 @@ Training Parameters:
 | DDBFusion | GPU | 33.89 | 30.06 | 41.98 | 35.57 | 17.35 |
 | StackMFF | GPU | 0.22 | 0.19 | 0.24 | 0.22 | 0.20 |
 | **Proposed** | GPU | **0.14** | **0.08** | **0.11** | **0.11** | **0.07** |
-
-### Statistical Ranking Analysis
-
-| Method | Mobile Depth | Middlebury | FlyingThings3D | Road-MF | Overall |
-|--------|--------------|------------|----------------|----------|----------|
-| MFF-GAN | 15.0 | 15.0 | 14.0 | 15.0 | 14.75 |
-| U2Fusion | 14.0 | 14.0 | 13.5 | 14.0 | 13.88 |
-| SwinFusion | 11.0 | 13.0 | 12.0 | 13.0 | 12.25 |
-| SDNet | 12.5 | 11.0 | 12.0 | 12.0 | 11.88 |
-| DCT | 11.0 | 12.0 | 11.0 | 11.0 | 11.25 |
-| SwinMFF | 11.0 | 10.0 | 9.5 | 10.0 | 10.13 |
-| MUFusion | 9.0 | 8.0 | 8.5 | 8.0 | 8.38 |
-| StackMFF | 8.5 | 9.0 | 6.5 | 9.0 | 8.25 |
-| DDBFusion | 6.0 | 7.0 | 7.5 | 5.0 | 6.38 |
-| DWT | 4.5 | 5.0 | 5.0 | 7.0 | 5.38 |
-| IFCNN | 7.0 | 3.0 | 2.0 | 6.0 | 4.50 |
-| NSCT | 4.5 | 5.0 | 5.0 | 1.5 | 4.00 |
-| CVT | 3.5 | 3.5 | 4.0 | 3.0 | 3.50 |
-| DTCWT | 2.0 | 2.5 | 3.0 | 1.5 | 2.25 |
-| **Proposed** | **1.0** | **1.0** | **1.0** | 4.0 | **1.75** |
 
 ## 📚 Citation
 
