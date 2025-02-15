@@ -35,10 +35,6 @@ Most multi-focus image fusion (MFF) networks are designed for two-image fusion, 
 <p>Demo of keyboard scene fusion</p>
 </div>
 
-<div align="center">
-<img src="assets/zeromotion_demo.gif" width="800px"/>
-<p>Demo of zeromotion scene fusion</p>
-</div>
 
 <div align="center">
 <img src="assets/framework.png" width="800px"/>
