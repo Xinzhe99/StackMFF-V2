@@ -56,53 +56,18 @@ pip install -r requirements.txt
 
 ## 📖 Data Preparation
 
-The framework supports training and validation with multiple datasets. Each dataset should be organized as follows:
+We provide the test datasets used in our paper for research purposes. These datasets were used to evaluate the performance of our proposed method and compare with other state-of-the-art approaches:
+- Mobile_Depth
+- Middlebury
+- FlyingThings3D
+- Road_MF
+- NYU_Depth_V2
 
-```
-project_root/
-├── train_dataset1/    
-│   ├── image_stacks/
-│   │   ├── stack1/
-│   │   │   ├── 1.png
-│   │   │   ├── 2.png
-│   │   │   └── ...
-│   │   └── stack2/
-│   │       ├── 1.png
-│   │       ├── 2.png
-│   │       └── ...
-│   └── depth_maps/
-│       ├── stack1.png
-│       └── stack2.png
-├── train_dataset2/
-├── train_dataset3/
-├── train_dataset4/
-├── train_dataset5/
-├── val_dataset1/  
-│   ├── image_stacks/
-│   │   ├── stack1/
-│   │   │   ├── 1.png
-│   │   │   ├── 2.png
-│   │   │   └── ...
-│   │   └── stack2/
-│   │       ├── 1.png
-│   │       ├── 2.png
-│   │       └── ...
-│   └── depth_maps/
-│       ├── stack1.png
-│       └── stack2.png
-├── val_dataset2/
-├── val_dataset3/
-├── val_dataset4/
-└── val_dataset5/
-```
+Download Link:
+- Baidu Cloud: [https://pan.baidu.com/s/1xxxxxxxxxxxxxxxx](https://pan.baidu.com/s/1xxxxxxxxxxxxxxxx)
+- Extraction Code: xxxx
 
-Key directory structure requirements:
-- Each dataset has two main subdirectories: `image_stacks` and `depth_maps`
-- In `image_stacks`, each scene has its own folder containing sequentially numbered images (e.g., 1.png, 2.png, ...)
-- In `depth_maps`, each scene has a corresponding depth map with the same name as its stack folder (e.g., stack1.png for stack1 folder)
-- All training and validation datasets follow the same structure as shown in the examples above
-- Images should be in PNG, JPG, or BMP format
-- Depth maps should be in grayscale PNG format
+These are the exact datasets used in our quantitative evaluation and computational efficiency analysis. After downloading, please organize the datasets following the structure described in the [Predict Dataset](#predict-dataset) section.
 
 ## 💻 Usage
 
