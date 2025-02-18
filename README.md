@@ -11,6 +11,11 @@
 
 <div align="center">
 
+## 📢 News
+
+> [!NOTE]
+> 🎉 **2024.03**: Our StackMFF V1 paper has been accepted by Applied Intelligence (APIN)! Paper link coming soon.
+
 ## Authors
 
 **Xinzhe Xie** 👨‍🎓, **Buyu Guo**<sup>✉</sup> 👨‍🏫, **Shuangyan He** 👩‍🏫, **Peiliang Li** 👨‍🏫, **Yanzhen Gu** 👨‍🏫
