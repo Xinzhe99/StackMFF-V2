@@ -1,4 +1,4 @@
-# Rethinking Multi-focus Image Stack Fusion: A Lightweight One-shot Deep Learning Framework via Focal Plane Depth Regression
+# StackMFF-V2
 
 
 ```
