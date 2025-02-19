@@ -14,7 +14,8 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/release/python-380/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=flat&logo=PyTorch&logoColor=white)](https://pytorch.org/)
-[![stars](https://img.shields.io/github/stars/Xinzhe99/StackMFF-V2?style=social)](https://github.com/Xinzhe99/StackMFF-V2)
+[![GitHub Stars](https://img.shields.io/github/stars/Xinzhe99/StackMFF-V2.svg?style=social)](https://github.com/Xinzhe99/StackMFF-V2/stargazers)
+[![GitHub Forks](https://img.shields.io/github/forks/Xinzhe99/StackMFF-V2.svg?style=social)](https://github.com/Xinzhe99/StackMFF-V2/network/members)
 
 Official PyTorch implementation of ["Rethinking Multi-focus Image Stack Fusion: A Lightweight One-shot Deep Learning Framework via Focal Plane Depth Regression"](paper_link)
 
