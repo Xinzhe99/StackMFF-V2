@@ -17,10 +17,9 @@
 [![PyTorch](https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=flat&logo=PyTorch&logoColor=white)](https://pytorch.org/)
 
 Official PyTorch implementation of ["Rethinking Multi-focus Image Stack Fusion: A Lightweight One-shot Deep Learning Framework via Focal Plane Depth Regression"](paper_link)
-
 </div>
-## 📢 News
 
+## 📢 News
 > [!NOTE]
 > 🎉 **2024.03**: Our StackMFF V1 paper has been accepted by Applied Intelligence (APIN)! Paper link coming soon.
 
