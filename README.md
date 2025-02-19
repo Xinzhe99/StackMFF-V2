@@ -1,5 +1,6 @@
 # StackMFF-V2
 
+<div align="center">
 
 ```
 ███████╗████████╗ █████╗  ██████╗██╗  ██╗███╗   ███╗███████╗███████╗    ██╗   ██╗██████╗ 
@@ -10,18 +11,20 @@
 ╚══════╝   ╚═╝   ╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝╚═╝     ╚═╝╚═╝     ╚═╝           ╚═══╝  ╚══════╝
 ```
 
-<div align="center">
-
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/release/python-380/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=flat&logo=PyTorch&logoColor=white)](https://pytorch.org/)
+[![GitHub Stars](https://img.shields.io/github/stars/Xinzhe99/StackMFF-V2.svg?style=social)](https://github.com/Xinzhe99/StackMFF-V2/stargazers)
 
 Official PyTorch implementation of ["Rethinking Multi-focus Image Stack Fusion: A Lightweight One-shot Deep Learning Framework via Focal Plane Depth Regression"](paper_link)
+
 </div>
 
 ## 📢 News
 > [!NOTE]
 > 🎉 **2024.03**: Our StackMFF V1 paper has been accepted by Applied Intelligence (APIN)! Paper link coming soon.
+
+<div align="center">
 
 ## Authors
 
@@ -372,6 +375,5 @@ This work was supported by:
 
 ---
 
-<div align="center">
 ⭐ If you find this project helpful, please give it a star!
 </div> 
