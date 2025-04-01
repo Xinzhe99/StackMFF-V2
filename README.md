@@ -28,13 +28,14 @@ Official PyTorch implementation of ["StackMFF V2: A Novel Ultra-Lightweight Lear
 
 ## Authors
 
-**Xinzhe Xie** 👨‍🎓, **Buyu Guo**<sup>✉</sup> 👨‍🏫, **Shuangyan He** 👩‍🏫, **Peiliang Li** 👨‍🏫, **Yanzhen Gu** 👨‍🏫
+**Xinzhe Xie** 👨‍🎓, **Buyu Guo**<sup>✉</sup> 👨‍🏫, **Shuangyan He** 👩‍🏫, **Peiliang Li** 👨‍🏫, **Yanzhen Gu** 👨‍🏫, **Yanjun Li** 👨‍🏫
 
 ### Institutions
 
 🏛️ Zhejiang University, Zhoushan, P. R. China  
 🏛️ Hainan Institute, Zhejiang University, Sanya, P. R. China  
 🔬 Donghai Laboratory, Zhoushan, P. R. China
+🔬 Hainan Provincial Observatory of Ecological Environment and Fishery Resource in Yazhou Bay, Sanya, P. R. China
 
 <sup>✉</sup> Corresponding author
 
