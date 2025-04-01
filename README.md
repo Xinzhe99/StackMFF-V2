@@ -354,6 +354,27 @@ For detailed parameter descriptions, please refer to the source code.
 If you use this project in your research, please cite our papers:
 
 ```bibtex
+@article{xie2025stackmff,
+  title={StackMFF: end-to-end multi-focus image stack fusion network},
+  author={Xie, Xinzhe and Qingyan, Jiang and Chen, Dong and Guo, Buyu and Li, Peiliang and Zhou, Sangjun},
+  journal={Applied Intelligence},
+  volume={55},
+  number={6},
+  pages={503},
+  year={2025},
+  publisher={Springer}
+}
+
+@article{xie2025multi,
+  title={Multi-focus image fusion with visual state space model and dual adversarial learning},
+  author={Xie, Xinzhe and Guo, Buyu and Li, Peiliang and He, Shuangyan and Zhou, Sangjun},
+  journal={Computers and Electrical Engineering},
+  volume={123},
+  pages={110238},
+  year={2025},
+  publisher={Elsevier}
+}
+
 @article{xie2024swinmff,
   title={SwinMFF: toward high-fidelity end-to-end multi-focus image fusion via swin transformer-based network},
   author={Xie, Xinzhe and Guo, Buyu and Li, Peiliang and He, Shuangyan and Zhou, Sangjun},
