@@ -28,7 +28,7 @@ Official PyTorch implementation of ["StackMFF V2: A Novel Ultra-Lightweight Lear
 
 ## Authors
 
-**Xinzhe Xie** 👨‍🎓, **Buyu Guo**<sup>✉</sup> 👨‍🏫, **Shuangyan He** 👩‍🏫, **Peiliang Li** 👨‍🏫, **Yanzhen Gu** 👨‍🏫, **Yanjun Li** 👨‍🏫
+**Xinzhe Xie** 👨‍🎓, **Buyu Guo**<sup>✉</sup> 👨‍🏫, **Shuangyan He** 👩‍🏫, **Peiliang Li** 👨‍🏫, **Yanzhen Gu**<sup>✉</sup> 👨‍🏫, **Yanjun Li** 👨‍🏫
 
 ### Institutions
 
