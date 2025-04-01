@@ -68,10 +68,15 @@ Current state-of-the-art (SOTA) multi-focus image fusion (MFF) methods, primaril
 ## ✨ Highlights
 
 🌟 Reformulates the stack fusion task into a focal plane depth regression problem.
+
 🔑 Depth maps serve as proxy supervision signals, avoiding manual annotations.
+
 🛠️ Employs a differentiable soft-regression strategy to enable end-to-end training.
+
 🎯 Recovers focal depth information during image acquisition via focus map regression.
+
 🏆 Attains SOTA performance with a compact model size and low computational overhead.
+
  
 ## 🚀 Installation
 
