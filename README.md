@@ -53,7 +53,7 @@ Official PyTorch implementation of ["StackMFF V2: A Novel Ultra-Lightweight Lear
 
 ## 📖 Overview
 
-Most multi-focus image fusion (MFF) networks are designed for two-image fusion, requiring multiple iterative operations for stack fusion that lead to error accumulation and image quality degradation. To address this challenge, we rethink the multi-focus image stack fusion problem by treating image stacks as a unified entity and propose a lightweight one-shot deep learning framework based on focal plane depth regression. The framework consists of three stages: intra-layer focus estimation, inter-layer focus estimation, and focus map regression. By reformulating multi-focus image stack fusion as a focal plane depth regression task, our framework enables end-to-end training using depth maps as proxy supervision. Extensive experiments on five public datasets demonstrate that our framework achieves state-of-the-art performance while reducing model size by 99.2% (from 6.08M to 0.05M parameters) compared to our previous one-shot fusion framework StackMFF, with the lowest FLOPs growth rate as the number of input images increases. Furthermore, our framework can process image stacks of arbitrary size in a single operation while preserving pixel fidelity through direct sampling.
+Current state-of-the-art (SOTA) multi-focus image fusion (MFF) methods, primarily designed for fusing image pairs, often exhibit quality degradation and computational inefficiency when applied to image stack fusion due to their iterative processing nature. To overcome these limitations, this paper introduces a novel, ultra-lightweight learning-based fusion framework that reframes the stack fusion task as a focal plane depth regression problem. This framework comprises three key stages: intra-layer focus estimation, inter-layer focus estimation, and focus map regression. By employing a differentiable soft-regression strategy and utilizing depth maps as proxy supervision signals, our method facilitates end-to-end training while eliminating the requirement for manual focus map annotations. Comprehensive experiments conducted on five public datasets demonstrate that the proposed framework achieves SOTA performance with minimal computational overhead. Compared to the latest one-shot fusion framework, StackMFF, our approach reduces the model size by 99.2\% and achieves an approximately 100\% faster inference speed. These results underscore the significant potential of our method for real-world imaging applications.
 
 <div align="center">
 <img src="assets/zeromotion_demo.gif" width="800px"/>
@@ -67,11 +67,12 @@ Most multi-focus image fusion (MFF) networks are designed for two-image fusion, 
 
 ## ✨ Highlights
 
-- 🔄 A novel framework for multi-focus image stack fusion based on focal plane regression
-- 🎯 Leverage depth maps as proxy supervision signals for focus map regression
-- 📊 Process stacks of any size while preserving pixel fidelity through direct sampling
-- ⚡ Achieve SOTA performance with minimal model size and computational cost
-
+🌟 Reformulates the stack fusion task into a focal plane depth regression problem.
+🔑 Depth maps serve as proxy supervision signals, avoiding manual annotations.
+🛠️ Employs a differentiable soft-regression strategy to enable end-to-end training.
+🎯 Recovers focal depth information during image acquisition via focus map regression.
+🏆 Attains SOTA performance with a compact model size and low computational overhead.
+ 
 ## 🚀 Installation
 
 1. Clone the repository:
