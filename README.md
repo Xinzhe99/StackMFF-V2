@@ -23,7 +23,7 @@ Official PyTorch implementation of ["StackMFF V2: A Novel Ultra-Lightweight Lear
 ## 📢 News
 > [!NOTE]
 > 🎉 **2024.03**: Our StackMFF V1 paper has been accepted by Applied Intelligence (APIN)! 
-
+> 🎉 **2025.04**: Our StackMFF V2 paper has been submitted! Coming soon~ 
 <div align="center">
 
 ## Authors
@@ -61,7 +61,7 @@ Current state-of-the-art (SOTA) multi-focus image fusion (MFF) methods, primaril
 
 
 <div align="center">
-<img src="assets/framework.png" width="800px"/>
+<img src="assets/framework_new.png" width="800px"/>
 <p>Overview of StackMFF-V2 Framework</p>
 </div>
 
