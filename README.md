@@ -22,7 +22,8 @@ Official PyTorch implementation of ["StackMFF V2: A Novel Ultra-Lightweight Lear
 
 ## 📢 News
 > [!NOTE]
-> 🎉 **2024.03**: Our StackMFF V1 paper has been accepted by Applied Intelligence (APIN)! 
+> 🎉 **2024.03**: Our StackMFF V1 paper has been accepted by Applied Intelligence (APIN)!
+
 > 🎉 **2025.04**: Our StackMFF V2 paper has been submitted! Coming soon~ 
 <div align="center">
 
