@@ -78,7 +78,7 @@ def parse_args():
     parser.add_argument('--lr', type=float, default=1e-3, help='Initial learning rate')
     parser.add_argument('--lr_decay', type=float, default=0.9, help='Learning rate decay factor')
     parser.add_argument('--loss_ratio', type=list, default=[0,1], help='Ratio between different loss components')
-    parser.add_argument('--num_workers', type=int, default=8, help='Number of data loading workers')
+    parser.add_argument('--num_workers', type=int, default=0, help='Number of data loading workers')
 
     return parser.parse_args()
 
@@ -399,4 +399,5 @@ def main():
     print(f"Model saved at: {model_save_path}")
 
 if __name__ == "__main__":
+
     main()
