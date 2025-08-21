@@ -125,6 +125,7 @@ def process_stack(model, image_stack, color_stack, device):
         estimated_depth: Estimated depth map
         color_fused: Color fused image
         depth_colormap: Colormap visualization of depth
+        depth_map_index: Index map indicating which image to sample from
     """
     model.eval()
     with torch.no_grad():
@@ -153,7 +154,7 @@ def process_stack(model, image_stack, color_stack, device):
         # Generate colormap visualization of depth
         depth_colormap = gray_to_colormap(estimated_depth)
 
-        return fused_image, estimated_depth, color_fused, depth_colormap
+        return fused_image, estimated_depth, color_fused, depth_colormap, depth_map_index
 
 
 def main():
@@ -173,7 +174,7 @@ def main():
     image_stack = image_stack.to(device)
 
     # Process image stack
-    fused_image, estimated_depth, color_fused, depth_colormap = process_stack(
+    fused_image, estimated_depth, color_fused, depth_colormap, depth_map_index = process_stack(
         model, image_stack, color_stack, device)
 
     # Save results
@@ -189,6 +190,13 @@ def main():
                 color_fused)
     cv2.imwrite(os.path.join(args.output_dir, f'depth_colormap_{timestamp}.png'),
                 cv2.cvtColor(depth_colormap, cv2.COLOR_RGB2BGR))
+    
+    # Save original index map as npy format
+    np.save(os.path.join(args.output_dir, f'depth_index_{timestamp}.npy'), depth_map_index)
+    
+    # Save normalized visualization of index map
+    normalized_index = (depth_map_index / (len(color_stack) - 1) * 255).astype(np.uint8)
+    cv2.imwrite(os.path.join(args.output_dir, f'depth_index_vis_{timestamp}.png'), normalized_index)
 
     print(f"Results saved to {args.output_dir} with timestamp {timestamp}")
 
