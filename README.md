@@ -55,7 +55,6 @@ Official PyTorch implementation of ["One-Shot Multi-Focus Image Stack Fusion via
 - [Installation](#-installation)
 - [Data Preparation](#-data-preparation)
 - [Usage](#-usage)
-- [Results](#-results)
 - [Citation](#-citation)
 
 ## 📖 Overview
@@ -396,6 +395,7 @@ This work was supported by:
 - The Hainan Provincial Joint Project of Sanya Yazhou Bay Science and Technology City (No: 2021JJLH0079)
 - Innovational Fund for Scientific and Technological Personnel of Hainan Province (NO. KJRC2023D19)
 - National Key R&D Program of China (No. 2022YFC3103402)
+
 We sincerely thank all the reviewers who have been responsible and have improved the quality of this study!
 ---
 
