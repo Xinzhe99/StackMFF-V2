@@ -16,7 +16,7 @@
 [![PyTorch](https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=flat&logo=PyTorch&logoColor=white)](https://pytorch.org/)
 
 
-Official PyTorch implementation of ["StackMFF V2: A Novel Ultra-Lightweight Learning-based Framework for One-Shot Multi-Focus Image Stack Fusion via Focal Depth Regression"](paper_link)
+Official PyTorch implementation of ["One-Shot Multi-Focus Image Stack Fusion via Focal Depth Regression"](paper_link)
 
 </div>
 
@@ -25,6 +25,8 @@ Official PyTorch implementation of ["StackMFF V2: A Novel Ultra-Lightweight Lear
 > [!NOTE]
 > 🎉 **2025.08**: We fixed a numerical precision bug in our StackMFF V2 paper's code, which had previously caused degraded fusion image quality.
 
+> 🎉 **2025.08**: We have updated the multifocus image stack registration script 'Registration.py' in the code repository. You can now easily integrate it into your own workflow.
+> 
 > 🎉 **2025.08**: To facilitate user processing of image pair datasets, we provide the `predict_pair_datasets.py` script for batch evaluation of image pair datasets with A/B folder structure. Each dataset is processed separately with organized output folders.
 
 > 🎉 **2025.04**: Our StackMFF V2 paper has been submitted! Coming soon~
@@ -37,7 +39,7 @@ Official PyTorch implementation of ["StackMFF V2: A Novel Ultra-Lightweight Lear
 
 ### Institutions
 
-🏛️ Zhejiang University, Zhoushan, P. R. China  
+🏛️ State Key Laboratory of Ocean Sensing & Ocean College, Zhoushan, P. R. China  
 🏛️ Hainan Institute, Zhejiang University, Sanya, P. R. China  
 🔬 Donghai Laboratory, Zhoushan, P. R. China
 🔬 Hainan Provincial Observatory of Ecological Environment and Fishery Resource in Yazhou Bay, Sanya, P. R. China
