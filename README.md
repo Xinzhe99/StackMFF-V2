@@ -25,6 +25,8 @@ Official PyTorch implementation of ["StackMFF V2: A Novel Ultra-Lightweight Lear
 > [!NOTE]
 > 🎉 **2025.08**: We fixed a numerical precision bug in our StackMFF V2 paper's code, which had previously caused degraded fusion image quality.
 
+> 🎉 **2025.08**: To facilitate user processing of image pair datasets, we provide the `predict_pair_datasets.py` script for batch evaluation of image pair datasets with A/B folder structure.
+
 > 🎉 **2025.04**: Our StackMFF V2 paper has been submitted! Coming soon~
 
 > 🎉 **2024.03**: Our StackMFF V1 paper has been accepted by Applied Intelligence (APIN)!
@@ -199,6 +201,54 @@ Parameters:
 - `--test_datasets`: List of dataset names to test (e.g., Mobile_Depth Middlebury)
 - `--output_dir`: Directory for saving results
 - `--model_path`: Path to model weights file (optional, defaults to `model.pth` in root directory)
+
+### Predict Image Pair Datasets
+
+For processing image pair datasets with A/B folder structure, use the `predict_pair_datasets.py` script. This script is specifically designed for datasets where images are organized as pairs in separate 'A' and 'B' subfolders.
+
+Organize your image pair datasets as follows:
+
+```
+test_root/
+├── dataset1/
+│   ├── A/
+│   │   ├── 1.png
+│   │   ├── 2.png
+│   │   └── ...
+│   └── B/
+│       ├── 1.png
+│       ├── 2.png
+│       └── ...
+├── dataset2/
+│   ├── A/
+│   └── B/
+└── dataset3/
+    ├── A/
+    └── B/
+```
+
+Run prediction on image pair datasets:
+```bash
+python predict_pair_datasets.py \
+    --test_root /path/to/test_root \
+    --test_datasets dataset1 dataset2 dataset3 \
+    --model_path model.pth \
+    --output_dir ./output_pair
+```
+
+The script will:
+1. Automatically match numerically ordered images from A and B folders (e.g., A/1.png pairs with B/1.png)
+2. Treat each image pair as a two-image stack for fusion
+3. Generate fusion results for each dataset
+4. Support various image formats (.png, .jpg, .jpeg, .bmp, .tiff, .tif, .webp, .ppm, .pgm, .pbm)
+
+Parameters:
+- `--test_root`: Root directory containing image pair datasets
+- `--test_datasets`: List of dataset folder names to process
+- `--model_path`: Path to model weights file
+- `--output_dir`: Directory for saving fusion results (default: ./output_pair)
+- `--batch_size`: Batch size for processing (default: 1)
+- `--num_workers`: Number of data loading workers (default: 4)
 
 ### Training
 
@@ -407,4 +457,4 @@ This work was supported by:
 ---
 
 ⭐ If you find this project helpful, please give it a star!
-</div> 
+</div>
