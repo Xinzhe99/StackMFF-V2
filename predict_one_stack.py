@@ -37,6 +37,8 @@ def parse_args():
                        help='Directory for saving results')
     parser.add_argument('--model_path', type=str, default='model.pth',
                        help='Path to the trained model weights')
+    parser.add_argument('--reverse', action='store_true', default=False,
+                       help='Reverse depth maps and index maps (depth = 1 - depth, index = max_index - index)')
     return parser.parse_args()
 
 
@@ -181,21 +183,32 @@ def main():
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     os.makedirs(args.output_dir, exist_ok=True)
 
+    # Prepare depth and index for saving (apply reverse if requested)
+    save_depth = estimated_depth
+    save_index = depth_map_index
+    if args.reverse:
+        save_depth = 1.0 - estimated_depth
+        max_index = len(color_stack) - 1
+        save_index = max_index - depth_map_index
+    
+    # Create depth colormap using the depth for saving
+    save_depth_colormap = gray_to_colormap(save_depth)
+
     # Save results (ensure values are in 0-255 range)
     cv2.imwrite(os.path.join(args.output_dir, f'fused_gray_{timestamp}.png'),
                 (fused_image * 255).astype(np.uint8))
     cv2.imwrite(os.path.join(args.output_dir, f'depth_map_{timestamp}.png'),
-                (estimated_depth * 255).astype(np.uint8))
+                (save_depth * 255).astype(np.uint8))
     cv2.imwrite(os.path.join(args.output_dir, f'color_fused_{timestamp}.png'),
                 color_fused)
     cv2.imwrite(os.path.join(args.output_dir, f'depth_colormap_{timestamp}.png'),
-                cv2.cvtColor(depth_colormap, cv2.COLOR_RGB2BGR))
+                cv2.cvtColor(save_depth_colormap, cv2.COLOR_RGB2BGR))
     
-    # Save original index map as npy format
-    np.save(os.path.join(args.output_dir, f'depth_index_{timestamp}.npy'), depth_map_index)
+    # Save index map as npy format (using save_index)
+    np.save(os.path.join(args.output_dir, f'depth_index_{timestamp}.npy'), save_index)
     
-    # Save normalized visualization of index map
-    normalized_index = (depth_map_index / (len(color_stack) - 1) * 255).astype(np.uint8)
+    # Save normalized visualization of index map (using save_index)
+    normalized_index = (save_index / (len(color_stack) - 1) * 255).astype(np.uint8)
     cv2.imwrite(os.path.join(args.output_dir, f'depth_index_vis_{timestamp}.png'), normalized_index)
 
     print(f"Results saved to {args.output_dir} with timestamp {timestamp}")
