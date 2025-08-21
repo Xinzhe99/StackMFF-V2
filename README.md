@@ -25,7 +25,7 @@ Official PyTorch implementation of ["StackMFF V2: A Novel Ultra-Lightweight Lear
 > [!NOTE]
 > 🎉 **2025.08**: We fixed a numerical precision bug in our StackMFF V2 paper's code, which had previously caused degraded fusion image quality.
 
-> 🎉 **2025.08**: To facilitate user processing of image pair datasets, we provide the `predict_pair_datasets.py` script for batch evaluation of image pair datasets with A/B folder structure.
+> 🎉 **2025.08**: To facilitate user processing of image pair datasets, we provide the `predict_pair_datasets.py` script for batch evaluation of image pair datasets with A/B folder structure. Each dataset is processed separately with organized output folders.
 
 > 🎉 **2025.04**: Our StackMFF V2 paper has been submitted! Coming soon~
 
@@ -204,7 +204,7 @@ Parameters:
 
 ### Predict Image Pair Datasets
 
-For processing image pair datasets with A/B folder structure, use the `predict_pair_datasets.py` script. This script is specifically designed for datasets where images are organized as pairs in separate 'A' and 'B' subfolders.
+For processing image pair datasets with A/B folder structure, use the `predict_pair_datasets.py` script. This script processes each dataset independently, similar to `predict_datasets.py`, and is specifically designed for datasets where images are organized as pairs in separate 'A' and 'B' subfolders.
 
 Organize your image pair datasets as follows:
 
@@ -237,10 +237,11 @@ python predict_pair_datasets.py \
 ```
 
 The script will:
-1. Automatically match numerically ordered images from A and B folders (e.g., A/1.png pairs with B/1.png)
-2. Treat each image pair as a two-image stack for fusion
-3. Generate fusion results for each dataset
-4. Support various image formats (.png, .jpg, .jpeg, .bmp, .tiff, .tif, .webp, .ppm, .pgm, .pbm)
+1. Process each dataset independently with separate output folders
+2. Automatically match numerically ordered images from A and B folders (e.g., A/1.png pairs with B/1.png)
+3. Treat each image pair as a two-image stack for fusion
+4. Generate fusion results for each dataset in organized subdirectories
+5. Support various image formats (.png, .jpg, .jpeg, .bmp, .tiff, .tif, .webp, .ppm, .pgm, .pbm)
 
 Parameters:
 - `--test_root`: Root directory containing image pair datasets
