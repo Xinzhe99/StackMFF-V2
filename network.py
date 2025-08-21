@@ -531,23 +531,18 @@ class StackMFF_V2(nn.Module):
 
         depth_map = depth_map.squeeze(1)  # Shape: [batch_size, height, width]
 
-        depth_map_index = (depth_map * (num_images - 1)).clamp(0, num_images - 1)
+        depth_map_continuous = (depth_map * (num_images - 1)).clamp(0, num_images - 1)
 
-        # Create batch indices
-        batch_indices = torch.arange(batch_size).view(-1, 1, 1).expand(-1, height, width)
+        depth_map_index = torch.round(depth_map_continuous).long()
 
-        # Convert normalized depth_map_index to long
-        depth_map_index = depth_map_index.long()
+        depth_map_index = torch.clamp(depth_map_index, 0, num_images - 1)
 
-        # Index into x using normalized_depth_map_index
-        fused_image = x[
-            batch_indices, depth_map_index,
-            torch.arange(height).view(1, -1, 1),
-            torch.arange(width).view(1, 1, -1)
-        ]
-        # Add channel dimension to maintain output shape
+        batch_indices = torch.arange(batch_size, device=x.device).view(-1, 1, 1).expand(-1, height, width)
+        height_indices = torch.arange(height, device=x.device).view(1, -1, 1).expand(batch_size, -1, width)
+        width_indices = torch.arange(width, device=x.device).view(1, 1, -1).expand(batch_size, height, -1)
+
+        fused_image = x[batch_indices, depth_map_index, height_indices, width_indices]
         fused_image = fused_image.unsqueeze(1)
-
         return fused_image, depth_map_index
     def _init_weights(self, m):
         """Initialize network weights"""
@@ -575,3 +570,4 @@ if __name__ == "__main__":
     x = torch.ones(1, 2, 128, 128)
     fused_image, fused_depth_map, depth_map_index = model(x)
     print(fused_image.shape, fused_depth_map.shape, depth_map_index.shape)
+
