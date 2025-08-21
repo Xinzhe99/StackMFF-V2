@@ -198,19 +198,15 @@ def infer_dataset(model, dataset_loader, device, save_path):
         model: Neural network model
         dataset_loader: DataLoader containing the test dataset
         device: Computing device (CPU/GPU)
-        save_path: Directory to save results
+        save_path: Directory to save results for this specific dataset
     
     Returns:
         float: Average inference time per stack
     """
     model.eval()
-
-    # 创建带时间戳的输出目录
-    timestamp = time.strftime("%Y%m%d_%H%M%S")
-    save_path = os.path.join(save_path, f'results_{timestamp}')
     
-    # Create output subdirectories
-    subdirs = ['fused_images', 'depth_maps', 'color_fused_images', 'depth_colormaps']
+    # Create output subdirectories for this dataset
+    subdirs = ['fused_images', 'depth_maps', 'color_fused_images', 'depth_colormaps', 'depth_indices', 'depth_indices_vis']
     for subdir in subdirs:
         os.makedirs(os.path.join(save_path, subdir), exist_ok=True)
 
@@ -250,6 +246,7 @@ def infer_dataset(model, dataset_loader, device, save_path):
             
             # Generate output filename with stack name
             filename = f'{stack_name[0]}.png'
+            filename_npy = f'{stack_name[0]}.npy'
             
             # Save all results
             try:
@@ -261,6 +258,13 @@ def infer_dataset(model, dataset_loader, device, save_path):
                            color_fused_bgr)
                 cv2.imwrite(os.path.join(save_path, subdirs[3], filename), 
                            depth_colormap_bgr)
+                
+                # Save original index map as npy format
+                np.save(os.path.join(save_path, subdirs[4], filename_npy), depth_map_index)
+                
+                # Save normalized visualization of index map
+                normalized_index = (depth_map_index / (len(color_stack) - 1) * 255).astype(np.uint8)
+                cv2.imwrite(os.path.join(save_path, subdirs[5], filename), normalized_index)
             except Exception as e:
                 print(f"Error saving images: {str(e)}")
                 continue
@@ -329,17 +333,23 @@ def main():
             num_workers=args.num_workers
         )
 
+    # 创建带时间戳的统一结果目录
+    timestamp = time.strftime("%Y%m%d_%H%M%S")
+    unified_results_dir = os.path.join(args.output_dir, f'results_{timestamp}')
+    os.makedirs(unified_results_dir, exist_ok=True)
+
     # Process each dataset
     dataset_avg_times = {}
     for dataset, loader in test_loaders.items():
-        dataset_save_path = os.path.join(args.output_dir, dataset)
+        # 每个数据集在统一结果目录下创建子文件夹
+        dataset_save_path = os.path.join(unified_results_dir, dataset)
         os.makedirs(dataset_save_path, exist_ok=True)
         print(f"Processing dataset: {dataset}")
         avg_time = infer_dataset(model, loader, device, dataset_save_path)
         dataset_avg_times[dataset] = avg_time
 
     # Print results summary
-    print(f"\nResults saved to: {args.output_dir}")
+    print(f"\nResults saved to: {unified_results_dir}")
     print("\nAverage inference times per image stack:")
     for dataset, avg_time in dataset_avg_times.items():
         print(f"{dataset}: {avg_time:.4f} seconds")
