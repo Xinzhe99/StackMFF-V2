@@ -25,7 +25,7 @@ Official PyTorch implementation of ["One-Shot Multi-Focus Image Stack Fusion via
 > [!NOTE]
 > 🎉 **2025.08**: We fixed a numerical precision bug in our StackMFF V2 paper's code, which had previously caused degraded fusion image quality.
 
-> 🎉 **2025.08**: We have updated the multifocus image stack registration script 'Registration.py' in the code repository. You can now easily integrate it into your own workflow.
+> 🎉 **2025.08**: We have updated the multifocus image stack registration script `Registration.py` in the code repository. You can now easily integrate it into your own workflow.
 > 
 > 🎉 **2025.08**: To facilitate user processing of image pair datasets, we provide the `predict_pair_datasets.py` script for batch evaluation of image pair datasets with A/B folder structure. Each dataset is processed separately with organized output folders.
 
