@@ -301,11 +301,23 @@ def main():
     print(f"Using device: {device}")
     
     model = StackMFF_V2()
-    state_dict = torch.load(args.model_path)
+    # Load model with proper device mapping for CPU/GPU compatibility
+    if torch.cuda.is_available():
+        state_dict = torch.load(args.model_path)
+    else:
+        state_dict = torch.load(args.model_path, map_location=torch.device('cpu'))
+    
     new_state_dict = {k.replace('module.', ''): v for k, v in state_dict.items()}
     model.load_state_dict(new_state_dict)
     model.to(device)
-    model = nn.DataParallel(model)
+    
+    # Only use DataParallel if CUDA is available and multiple GPUs exist
+    if torch.cuda.is_available() and torch.cuda.device_count() > 1:
+        model = nn.DataParallel(model)
+    elif torch.cuda.is_available():
+        # Single GPU, no need for DataParallel
+        pass
+    # For CPU, no DataParallel needed
 
     # Initialize test data loaders for each dataset
     test_loaders = {}
