@@ -4,7 +4,7 @@
 
 **One-Shot Multi-Focus Image Stack Fusion via Focal Depth Regression**
 
-[![Paper](https://img.shields.io/badge/Paper-Applied%20Intelligence-blue)](https://link.springer.com/article/10.1007/s10489-024-06079-8)
+[![Paper](xxx)](xxx)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 [![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-1.8+-red.svg)](https://pytorch.org/)
