@@ -48,6 +48,7 @@
 - [Highlights](#-highlights)
 - [Installation](#-installation)
 - [Data Preparation](#-data-preparation)
+- [Downloads](#-downloads)
 - [Usage](#-usage)
 - [Citation](#-citation)
 
@@ -106,17 +107,45 @@ We provide the test datasets used in our paper for research purposes. These data
 - Road_MF
 - NYU_Depth_V2
 
-Download Links:
-- Test Datasets:
-  - Baidu Cloud: [https://pan.baidu.com/s/1vnEciGFDDjDybmoxNSAVSA](https://pan.baidu.com/s/1vnEciGFDDjDybmoxNSAVSA)
-  - Extraction Code: cite
+## 📥 Downloads
 
-- Fusion Results of All Compared Methods:
-  - Baidu Cloud: [https://pan.baidu.com/s/1wzv8UKU_0boL1cSs58sr2w](https://pan.baidu.com/s/1wzv8UKU_0boL1cSs58sr2w)
-  - Extraction Code: cite
+### 🗂️ Test Datasets
 
-For the implementation of iterative fusion methods mentioned in our paper, please refer to our toolbox:
-[Toolbox-for-Multi-focus-Image-Stack-Fusion](https://github.com/Xinzhe99/Toolbox-for-Multi-focus-Image-Stack-Fusion)
+<div align="center">
+
+[![Download Test Datasets](https://img.shields.io/badge/📦_Download-Test_Datasets-4CAF50?style=for-the-badge&logo=googledrive&logoColor=white)](https://pan.baidu.com/s/1vnEciGFDDjDybmoxNSAVSA)
+
+**Extraction Code:** `cite`
+
+*Complete evaluation datasets used in our quantitative analysis*
+
+</div>
+
+---
+
+### 📊 Benchmark Results
+
+<div align="center">
+
+[![Download Fusion Results](https://img.shields.io/badge/📈_Download-Fusion_Results-FF9800?style=for-the-badge&logo=databricks&logoColor=white)](https://pan.baidu.com/s/1wzv8UKU_0boL1cSs58sr2w)
+
+**Extraction Code:** `cite`
+
+*Comprehensive fusion results from all compared methods*
+
+</div>
+
+---
+
+### 🧰 Related Resources
+
+<div align="center">
+
+[![Fusion Toolbox](https://img.shields.io/badge/🔧_GitHub-Fusion_Toolbox-2196F3?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Xinzhe99/Toolbox-for-Multi-focus-Image-Stack-Fusion)
+
+*Implementation of iterative fusion methods mentioned in our paper*
+
+</div>
 
 These are the exact datasets used in our quantitative evaluation and computational efficiency analysis. After downloading, please organize the datasets following the structure described in the [Predict Dataset](#predict-dataset) section.
 
