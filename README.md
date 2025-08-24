@@ -342,6 +342,9 @@ For detailed parameter descriptions, please refer to the source code.
 
 If you use this project in your research, please cite our papers:
 
+<details>
+<summary>📋 BibTeX</summary>
+
 ```bibtex
 @article{xie2025stackmff,
   title={StackMFF: end-to-end multi-focus image stack fusion network},
@@ -391,6 +394,8 @@ If you use this project in your research, please cite our papers:
   organization={IEEE}
 }
 ```
+
+</details>
 
 ## 🙏 Acknowledgments
 
