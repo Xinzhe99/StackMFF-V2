@@ -1,22 +1,16 @@
-# StackMFF-V2
-
 <div align="center">
 
-```
-███████╗████████╗ █████╗  ██████╗██╗  ██╗███╗   ███╗███████╗███████╗    ██╗   ██╗██████╗ 
-██╔════╝╚══██╔══╝██╔══██╗██╔════╝██║ ██╔╝████╗ ████║██╔════╝██╔════╝    ██║   ██║╚════██╗
-███████╗   ██║   ███████║██║     █████╔╝ ██╔████╔██║█████╗  █████╗      ██║   ██║ █████╔╝
-╚════██║   ██║   ██╔══██║██║     ██╔═██╗ ██║╚██╔╝██║██╔══╝  ██╔══╝      ╚██╗ ██╔╝██╔═══╝ 
-███████║   ██║   ██║  ██║╚██████╗██║  ██╗██║ ╚═╝ ██║██║     ██║          ╚████╔╝ ███████╗
-╚══════╝   ╚═╝   ╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝╚═╝     ╚═╝╚═╝     ╚═╝           ╚═══╝  ╚══════╝
-```
+# 📚 StackMFF-V2
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/release/python-380/)
-[![PyTorch](https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=flat&logo=PyTorch&logoColor=white)](https://pytorch.org/)
+**One-Shot Multi-Focus Image Stack Fusion via Focal Depth Regression**
 
+[![Paper](https://img.shields.io/badge/Paper-Applied%20Intelligence-blue)](https://link.springer.com/article/10.1007/s10489-024-06079-8)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+[![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/)
+[![PyTorch](https://img.shields.io/badge/PyTorch-1.8+-red.svg)](https://pytorch.org/)
+[![GitHub](https://img.shields.io/badge/GitHub-StackMFF--V2-black.svg)](https://github.com/Xinzhe99/StackMFF-V2)
 
-Official PyTorch implementation of ["One-Shot Multi-Focus Image Stack Fusion via Focal Depth Regression"](paper_link)
+*Official PyTorch implementation for One-Shot Multi-Focus Image Stack Fusion via Focal Depth Regression*
 
 </div>
 
