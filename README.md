@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🔬 StackMFF V2
+# <img src="assets/stackmff_logo.svg" alt="StackMFF V2" height="40" style="vertical-align: middle;"/> StackMFF V2
 
 **One-Shot Multi-Focus Image Stack Fusion via Focal Depth Regression**
 
