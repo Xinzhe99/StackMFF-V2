@@ -378,7 +378,16 @@ If you use this project in your research, please cite our papers:
   year={2024},
   publisher={Springer}
 }
-
+@article{xie2025lightmff,
+  title={LightMFF: A Simple and Efficient Ultra-Lightweight Multi-Focus Image Fusion Network},
+  author={Xie, Xinzhe and Lin, Zijian and Guo, Buyu and He, Shuangyan and Gu, Yanzhen and Bai, Yefei and Li, Peiliang},
+  journal={Applied Sciences},
+  volume={15},
+  number={13},
+  pages={7500},
+  year={2025},
+  publisher={MDPI}
+}
 @inproceedings{xie2024underwater,
   title={Underwater Three-Dimensional Microscope for Marine Benthic Organism Monitoring},
   author={Xie, Xinzhe and Guo, Buyu and Li, Peiliang and Jiang, Qingyan},
