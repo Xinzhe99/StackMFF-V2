@@ -26,19 +26,6 @@
 
 > 🎉 **2024.03**: Our StackMFF V1 paper has been accepted by Applied Intelligence (APIN)!
 
-## Authors
-
-**Xinzhe Xie** 👨‍🎓, **Buyu Guo**<sup>✉</sup> 👨‍🏫, **Shuangyan He** 👩‍🏫, **Peiliang Li** 👨‍🏫, **Yanzhen Gu**<sup>✉</sup> 👨‍🏫, **Yanjun Li** 👨‍🏫
-
-### Institutions
-
-🏛️ State Key Laboratory of Ocean Sensing & Ocean College, Zhoushan, P. R. China  
-🏛️ Hainan Institute, Zhejiang University, Sanya, P. R. China  
-🔬 Donghai Laboratory, Zhoushan, P. R. China
-🔬 Hainan Provincial Observatory of Ecological Environment and Fishery Resource in Yazhou Bay, Sanya, P. R. China
-
-<sup>✉</sup> Corresponding author
-
 </div>
 
 ##  Table of Contents
