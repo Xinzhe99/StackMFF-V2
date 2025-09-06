@@ -329,7 +329,7 @@ For detailed parameter descriptions, please refer to the source code.
 - **Case 2 (single-GPU training):**  
   - **OS:** Windows  
   - **GPU:** 1 × NVIDIA GeForce RTX 4090D  
-  - **Hyperparameters:**  
+  - **Hyperparameters (changed for Windows):**  
     - `num_workers = 0` (only in training, data loading code itself does not require modification)  
     - `batch_size = 4` (adjusted according to GPU memory)  
   - **Training time:** ~4 h per epoch  
