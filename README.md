@@ -105,14 +105,14 @@ These are the exact datasets used in our quantitative evaluation and computation
 
 The `make_datasets` folder contains all the necessary code for processing and splitting the training datasets:
 
-- `ADE/1_extract.py`: Extracts and organizes images from the ADE20K dataset
-- `DUTS/filter.py`: Filters out images with uniform backgrounds from the DUTS dataset
-- `DIODE/extract_from_ori.py`: Processes and converts images from the DIODE dataset
-- `NYU V2 Depth/`:
+- `ADE/1_extract.py`: Extracts and organizes images from the [ADE20K](https://hyper.ai/cn/datasets/5212) dataset
+- `DUTS/filter.py`: Filters out images with uniform backgrounds from the [DUTS](https://hyper.ai/cn/datasets/16458) dataset
+- `DIODE/extract_from_ori.py`: Processes and converts images from the [DIODE](https://hyper.ai/cn/datasets/19918) dataset
+- `NYU V2 Depth/`: Processing the original [NYU V2 Depth](https://hyper.ai/cn/datasets/5376) dataset
   - `1_crop_nyu_v2.py`: Crops RGB and depth images to remove boundary artifacts
   - `2_nyu_depth_norm.py`: Normalizes depth maps to a standard range
   - `3_split.py`: Splits the dataset into training and testing sets
-- `Cityscapes/1_move.py`: Reorganizes the Cityscapes dataset into a flattened structure
+- `Cityscapes/1_move.py`: Reorganizes the [Cityscapes](https://hyper.ai/cn/datasets/5205) dataset into a flattened structure
 - `make_dataset.py`: Generates multi-focus image stacks using depth maps
 
 For depth maps, except for the NYU Depth V2 dataset which uses its own depth maps, all other depth maps are obtained through inference using [Depth Anything V2](https://github.com/DepthAnything/Depth-Anything-V2).
@@ -319,6 +319,21 @@ python train.py \
 ```
 
 For detailed parameter descriptions, please refer to the source code.
+
+### Some training details
+- **Case 1 (multi-GPU training):**  
+  - **OS:** Ubuntu 
+  - **GPU:** 2 × NVIDIA RTX A6000 
+  - **Hyperparameters:** original settings  
+  - **Training time:** ~50 min per epoch
+- **Case 2 (single-GPU training):**  
+  - **OS:** Windows  
+  - **GPU:** 1 × NVIDIA GeForce RTX 4090D  
+  - **Hyperparameters:**  
+    - `num_workers = 0` (only in training, data loading code itself does not require modification)  
+    - `batch_size = 4` (adjusted according to GPU memory)  
+  - **Training time:** ~4 h per epoch  
+- **Note:**   On Windows, `num_workers` should be set to 0 to avoid dataloader errors or excessively long training times. On Linux/Ubuntu, this limitation does not exist.
 
 
 ## 📚 Citation
