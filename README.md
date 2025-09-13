@@ -16,6 +16,10 @@
 ## 📢 News
 
 > [!NOTE]
+> 🎉 **2025.09**: StackMFF V3, the most advanced and versatile multi-focus image fusion network to date, will be presented in 2026. Stay tuned!
+
+> 🎉 **2025.09**: We updated the code to index the fused image based on the focus map using `torch.gather`, which has improved pixel indexing speed by 100%!
+> 
 > 🎉 **2025.08**: We fixed a numerical precision bug in our StackMFF V2 paper's code, which had previously caused degraded fusion image quality.
 
 > 🎉 **2025.08**: We have updated the multifocus image stack registration script `Registration.py` in the code repository. You can now easily integrate it into your own workflow.
