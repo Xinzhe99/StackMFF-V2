@@ -537,12 +537,10 @@ class StackMFF_V2(nn.Module):
 
         depth_map_index = torch.clamp(depth_map_index, 0, num_images - 1)
 
-        batch_indices = torch.arange(batch_size, device=x.device).view(-1, 1, 1).expand(-1, height, width)
-        height_indices = torch.arange(height, device=x.device).view(1, -1, 1).expand(batch_size, -1, width)
-        width_indices = torch.arange(width, device=x.device).view(1, 1, -1).expand(batch_size, height, -1)
+        depth_map_index_expanded = depth_map_index.unsqueeze(1)  # [batch_size, 1, height, width]
+        
+        fused_image = torch.gather(x, 1, depth_map_index_expanded)
 
-        fused_image = x[batch_indices, depth_map_index, height_indices, width_indices]
-        fused_image = fused_image.unsqueeze(1)
         return fused_image, depth_map_index
     def _init_weights(self, m):
         """Initialize network weights"""
@@ -570,4 +568,5 @@ if __name__ == "__main__":
     x = torch.ones(1, 2, 128, 128)
     fused_image, fused_depth_map, depth_map_index = model(x)
     print(fused_image.shape, fused_depth_map.shape, depth_map_index.shape)
+
 
