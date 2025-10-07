@@ -339,7 +339,7 @@ For detailed parameter descriptions, please refer to the source code.
     - `num_workers = 0` (only in training, data loading code itself does not require modification)  
     - `batch_size = 4` (adjusted according to GPU memory)  
   - **Training time:** ~4 h per epoch  
-- **Note:**   On Windows, `num_workers` should be set to 0 to avoid dataloader errors or excessively long training times. On Linux/Ubuntu, this limitation does not exist.
+- **Note:** On Windows, if you encounter dataloader errors or unusually long training times, try setting `num_workers` to 0. This limitation does not apply to Linux/Ubuntu systems.
 
 
 ## 📚 Citation
