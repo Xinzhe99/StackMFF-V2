@@ -403,8 +403,7 @@ If you use this project in your research, please cite our papers:
 
 ## 🙏 Acknowledgments
 
-We sincerely thank all the reviewers who have been responsible and have improved the quality of this study!
----
+We sincerely thank all the reviewers and the editors for their responsible efforts and valuable feedback, which have greatly improved the quality of this study!
 
 ⭐ If you find this project helpful, please give it a star!
 </div>
