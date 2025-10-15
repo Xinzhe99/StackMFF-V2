@@ -18,6 +18,7 @@
 
 > [!NOTE]
 > 🎉 **2025.10**: The paper has been published! Please visit [Elsevier Author Link](https://authors.elsevier.com/c/1lwyn3OWJ9CXcd)
+> 
 > 🎉 **2025.10**: We are pleased to share that StackMFF V2 has been accepted for publication in the journal Engineering Applications of Artificial Intelligence (EAAI), and the paper will be available online soon!
 > 
 > 🎉 **2025.09**: StackMFF V3, the most advanced and versatile multi-focus image fusion network to date, will be presented in 2026. Stay tuned!
